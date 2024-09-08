@@ -1,16 +1,12 @@
 import { getPostMeta } from "@/lib/posts";
 import { WidthWrapper } from "./width-wrapper";
-import { Navbar } from "./navbar"; // Import Navbar component
 import Link from "next/link";
 import getFormattedDate from "@/lib/formatdate";
-import { useState } from "react";
 
 export const Blogs = async () => {
-  let posts = await getPostMeta();
+  const posts = await getPostMeta();
 
   if (!posts) return null;
-
-  // Filter posts based on the search value
 
   return (
     <>

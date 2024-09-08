@@ -1,13 +1,8 @@
-"use client";
-import { useEffect, useState } from "react";
 import { WidthWrapper } from "@/components/width-wrapper";
 import { getPostMeta } from "@/lib/posts";
 import { LinkBlogs } from "@/components/blogs";
 import { Input } from "@/components/ui/input";
 export default async function Page() {
-  const [search, setSearch] = useState("");
-  //   const [posts, setPosts] = useState<Meta[] | undefined>(undefined);
-  const [filteredPosts, setFilteredPosts] = useState([]);
   const posts = await getPostMeta();
 
   if (!posts) return null;

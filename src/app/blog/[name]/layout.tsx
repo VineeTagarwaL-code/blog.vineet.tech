@@ -12,7 +12,7 @@ export default function BlogLayout({
     <div>
       <WidthWrapper className="max-w-[1100px]">
         <header>
-          <Navbar disableSearch={true} />
+          <Navbar />
         </header>
         <main>
           {children}
