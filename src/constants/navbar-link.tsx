@@ -6,8 +6,8 @@ export const NavbarLinks: {
     name: "Posts",
     url: "/posts",
   },
-  {
-    name: "Tags",
-    url: "/tags",
-  },
+  // {
+  //   name: "Tags",
+  //   url: "/tags",
+  // },
 ];

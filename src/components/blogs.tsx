@@ -19,7 +19,7 @@ export const Blogs = async () => {
 const LinkBlogs = (post: Meta) => {
   return (
     <Link href={`/blog/${post.id}`}>
-      <div className="hover:scale-[1.04] transition-all rounded-xl bg-white/40 dark:bg-stone-900/60 px-6 py-7">
+      <div className="hover:scale-[1.04] transition-all rounded-xl bg-white/40 dark:bg-stone-900/60 px-6 py-7 mb-6">
         <h2 className="font-semibold text-3xl">{post.title}</h2>
         <p className="text-xl mt-3 text-muted-foreground">{post.description}</p>
         <p className="text-muted-foreground mt-4">
