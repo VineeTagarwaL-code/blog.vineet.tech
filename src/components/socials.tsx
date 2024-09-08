@@ -28,7 +28,7 @@ export const Socials = () => {
         <a
           key={social.url}
           href={social.url}
-          className="text-white/70 transition-all  dark:hover:text-white  text-xl font-[300]"
+          className="text-muted-foreground dark:text-foreground transition-all  dark:hover:text-white  text-xl font-[300] hover:scale-[1.1] "
         >
           {social.icon}
         </a>

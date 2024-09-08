@@ -20,7 +20,7 @@ export const Navbar = () => {
           <a
             key={link.url}
             href={link.url}
-            className="text-white/70 transition-all  dark:hover:text-white  text-lg font-[300]"
+            className="text-muted-foreground transition-all hover:text-black  dark:hover:text-white  text-lg font-[300]"
           >
             {link.name}
           </a>

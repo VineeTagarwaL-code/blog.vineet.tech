@@ -1,3 +1,4 @@
+import { Blogs } from "@/components/blogs";
 import { Introduction } from "@/components/introduction";
 import { Navbar } from "@/components/navbar";
 import { WidthWrapper } from "@/components/width-wrapper";
@@ -14,6 +15,7 @@ export default function Home() {
         residence="🏡  I live in Durgapur, west bengal"
         additional="This blog will serve as a home for all my thoughts, notes and experiences, ranging from programming to math, machine learning, web development and more. Scroll down and check ‘em out!"
       />
+      <Blogs />
     </WidthWrapper>
   );
 }
