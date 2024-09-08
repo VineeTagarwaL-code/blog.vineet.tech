@@ -9,7 +9,7 @@ export const Blogs = async () => {
     <WidthWrapper className=" max-w-full md:max-w-[900px] mt-14">
       <ul>
         {posts.map((post: Meta) => (
-          <LinkBlogs {...post} />
+          <LinkBlogs {...post} key={post.id} />
         ))}
       </ul>
     </WidthWrapper>

@@ -57,12 +57,13 @@ export async function getPostMeta(): Promise<Meta[] | undefined> {
   );
 
   const repoFileTree: fileTree = await res.data;
+  //@typescript-eslint/no-explicit-any
   const fileArray = repoFileTree.tree.filter((file: any) =>
     file.path.includes(".mdx")
   );
   const posts: Meta[] = [];
   for (const file of fileArray) {
-    let post = await getPostByName(file.path);
+    const post = await getPostByName(file.path);
     if (post) {
       const { meta } = post;
       posts.push(meta);
