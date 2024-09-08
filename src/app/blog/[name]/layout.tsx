@@ -1,4 +1,3 @@
-import { Footer } from "@/components/footer";
 import { Navbar } from "@/components/navbar";
 import { ScrollTop } from "@/components/scroll-top";
 import { WidthWrapper } from "@/components/width-wrapper";

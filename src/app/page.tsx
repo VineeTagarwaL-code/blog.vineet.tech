@@ -1,7 +1,6 @@
 import { Blogs } from "@/components/blogs";
 import { Introduction } from "@/components/introduction";
 import { Navbar } from "@/components/navbar";
-import { ScrollTop } from "@/components/scroll-top";
 import { WidthWrapper } from "@/components/width-wrapper";
 export const revalidate = 10;
 export default function Home() {
