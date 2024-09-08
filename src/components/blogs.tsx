@@ -1,22 +1,31 @@
 import { getPostMeta } from "@/lib/posts";
 import { WidthWrapper } from "./width-wrapper";
+import { Navbar } from "./navbar"; // Import Navbar component
 import Link from "next/link";
 import getFormattedDate from "@/lib/formatdate";
+import { useState } from "react";
+
 export const Blogs = async () => {
-  const posts = await getPostMeta();
+  let posts = await getPostMeta();
+
   if (!posts) return null;
+
+  // Filter posts based on the search value
+
   return (
-    <WidthWrapper className=" max-w-full md:max-w-[900px] mt-14">
-      <ul>
-        {posts.map((post: Meta) => (
-          <LinkBlogs {...post} key={post.id} />
-        ))}
-      </ul>
-    </WidthWrapper>
+    <>
+      <WidthWrapper className="max-w-full md:max-w-[900px] mt-14">
+        <ul>
+          {posts.map((post: Meta) => (
+            <LinkBlogs {...post} key={post.id} />
+          ))}
+        </ul>
+      </WidthWrapper>
+    </>
   );
 };
 
-const LinkBlogs = (post: Meta) => {
+export const LinkBlogs = (post: Meta) => {
   return (
     <Link href={`/blog/${post.id}`}>
       <div className="hover:scale-[1.04] transition-all rounded-xl bg-white/40 dark:bg-stone-900/60 px-6 py-7 mb-6">
@@ -25,6 +34,16 @@ const LinkBlogs = (post: Meta) => {
         <p className="text-muted-foreground mt-4">
           {getFormattedDate(post.date)} · Vineet Agarwal
         </p>
+        <div>
+          {post.tags.map((tag) => (
+            <span
+              className="text-sm bg-gray-100 dark:bg-gray-800/80  dark:text-gray-200 text-gray-700 px-2 py-1 rounded-md mr-2 mt-2 inline-block"
+              key={tag}
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
       </div>
     </Link>
   );

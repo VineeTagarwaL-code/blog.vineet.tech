@@ -52,7 +52,7 @@ export default async function Page({ params }: { params: { name: string } }) {
           <p className="text-muted-foreground mt-3 mb-12 ">
             {getFormattedDate(post.meta.date)} · Vineet Agarwal
           </p>
-          <article className="prose-lg prose-li:list-disc prose-pre:px-0">
+          <article className="prose-lg prose-li:list-disc prose-pre:px-0 mb-8">
             {post.content}
           </article>
         </div>
