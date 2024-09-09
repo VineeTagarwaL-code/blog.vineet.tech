@@ -2,6 +2,7 @@ import { WidthWrapper } from "@/components/width-wrapper";
 import getFormattedDate from "@/lib/formatdate";
 import { getPostByName } from "@/lib/posts";
 import Link from "next/link";
+import axios from "axios";
 import "highlight.js/styles/github-dark.css";
 export async function generateMetadata({
   params,
@@ -13,9 +14,8 @@ export async function generateMetadata({
   };
 }
 
-export const revalidate = 10;
 export default async function Page({ params }: { params: { name: string } }) {
-  const post = await getPostByName(params.name + ".mdx");
+  const post = await getPostByName(`${params.name}.mdx`);
   if (!post)
     return (
       <WidthWrapper className=" max-w-full md:max-w-[900px] mt-14">

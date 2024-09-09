@@ -56,7 +56,6 @@ export async function getPostByName(file: any): Promise<BlogPost | undefined> {
     });
     const id = file.replace(".mdx", "");
     const blogPost: BlogPost = { meta: { id, ...frontmatter }, content };
-    console.log(blogPost);
     return blogPost;
   } catch (e) {
     return undefined;
