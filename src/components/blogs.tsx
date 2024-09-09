@@ -1,11 +1,9 @@
 "use client";
-import { getPostMeta } from "@/lib/posts";
 import { WidthWrapper } from "./width-wrapper";
 import Link from "next/link";
 import getFormattedDate from "@/lib/formatdate";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Loader } from "lucide-react";
 import { Skeleton } from "./skeleton";
 export const Blogs = () => {
   const [posts, setPosts] = useState<Meta[] | undefined>(undefined);

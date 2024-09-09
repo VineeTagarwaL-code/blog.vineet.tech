@@ -2,7 +2,6 @@ import { WidthWrapper } from "@/components/width-wrapper";
 import getFormattedDate from "@/lib/formatdate";
 import { getPostByName } from "@/lib/posts";
 import Link from "next/link";
-import axios from "axios";
 import "highlight.js/styles/github-dark.css";
 export async function generateMetadata({
   params,
