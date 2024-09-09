@@ -3,7 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import Script from "next/script";
-
+import { Toaster } from "@/components/ui/toaster";
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -36,6 +36,7 @@ export default function RootLayout({
           src="https://unmani-vercel.vercel.app/script.js"
           data-website-id="8606e195-da59-401f-bde2-8b6837618dc1"
         ></Script>
+        <Toaster />
       </body>
     </html>
   );

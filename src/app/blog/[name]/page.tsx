@@ -15,6 +15,7 @@ export async function generateMetadata({
 
 export default async function Page({ params }: { params: { name: string } }) {
   const post = await getPostByName(`${params.name}.mdx`);
+
   if (!post)
     return (
       <WidthWrapper className=" max-w-full md:max-w-[900px] mt-14">
@@ -45,8 +46,8 @@ export default async function Page({ params }: { params: { name: string } }) {
           </Link>
         </p>
         <div className="mt-3">
-          <p className="text-4xl text-foreground font-semibold">
-            {post.meta.title}
+          <p className="text-4xl text-foreground font-semibold w-full flex justify-between items-center">
+            {post.meta.title}{" "}
           </p>
           <p className="text-muted-foreground mt-3 mb-12 ">
             {getFormattedDate(post.meta.date)} · Vineet Agarwal

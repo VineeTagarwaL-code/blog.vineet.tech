@@ -3,8 +3,8 @@ export const NavbarLinks: {
   url: string;
 }[] = [
   {
-    name: "Posts",
-    url: "/posts",
+    name: "Blogs",
+    url: "/blogs",
   },
   {
     name: "Tags",

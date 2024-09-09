@@ -9,11 +9,11 @@ export default function Home() {
       <Navbar />
       <Introduction
         welcomeText="Hi, there 👋"
-        name="👨‍🎓 I’m Vineet Agarwal , a 19 year-old college student."
-        profession="👨‍💻 I work at concertpal as software engineer."
-        works="⚒️ I mainly work with typescript and nextjs."
+        name="👨‍🎓 I’m Vineet Agarwal , a 20 year-old college student."
+        profession="👨‍💻 I work at concertpal as a software engineer."
+        works="⚒️ I mainly work with TS, React, Node, and Go."
         residence="🏡  I live in Durgapur, west bengal"
-        additional="This blog will serve as a home for all my thoughts, notes and experiences, ranging from programming to math, machine learning, web development and more. Scroll down and check ‘em out!"
+        additional="I love to learn & explore a lot, this place will be my dumping ground for all the random thoughts, things, projects that i learn or work on."
       />
       <Blogs />
     </WidthWrapper>
