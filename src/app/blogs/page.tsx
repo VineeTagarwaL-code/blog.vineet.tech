@@ -6,7 +6,7 @@ import { Skeleton } from "@/components/skeleton";
 import { Input } from "@/components/ui/input";
 import debounce from "lodash/debounce";
 import { LinkBlogs } from "@/components/Link-blogs";
-export default function Blogs() {
+export default function Page() {
   const [posts, setPosts] = useState<Meta[] | undefined>(undefined);
   const [allPosts, setAllPosts] = useState<Meta[] | undefined>(undefined);
   const [search, setSearch] = useState<string>("");
