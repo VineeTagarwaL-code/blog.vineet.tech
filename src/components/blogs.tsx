@@ -26,7 +26,7 @@ export const Blogs = () => {
   if (loading)
     return (
       <WidthWrapper className="max-w-full md:max-w-[900px] mt-14">
-        <Skeleton className="w-full block mb-4  bg-white/40 dark:bg-stone-900/60 animate-pulse h-[150px] rounded-xl" />
+        <Skeleton className="w-full block mb-4  bg-white/40 transition-all  dark:bg-stone-900/60 animate-pulse h-[150px] rounded-xl" />
         <Skeleton className="w-full block  bg-white/40 dark:bg-stone-900/60 animate-pulse h-[150px] rounded-xl" />
       </WidthWrapper>
     );
