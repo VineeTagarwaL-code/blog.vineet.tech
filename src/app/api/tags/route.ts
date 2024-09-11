@@ -3,7 +3,7 @@ import axios from "axios";
 
 export async function GET() {
   try {
-    const res = await axios.get(`http://localhost:3000/api/blogs`);
+    const res = await axios.get(`https://blog.vineet.tech/api/blogs`);
     const blogs = res.data.blogs;
 
     const allTags = blogs.map((blog: any) => blog.tags).flat();
