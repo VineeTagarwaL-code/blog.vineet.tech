@@ -8,7 +8,7 @@ export default function Home() {
     <WidthWrapper className="select-none">
       <Navbar />
       <Introduction
-        welcomeText="Hi, there 👋"
+        welcomeText="Hi, there guys 👋"
         name="👨‍🎓 I’m Vineet Agarwal , a 20 year-old college student."
         profession="👨‍💻 I work at concertpal as a software engineer."
         works="⚒️ I mainly work with TS, React, Node, and Go."
