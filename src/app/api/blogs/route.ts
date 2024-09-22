@@ -18,6 +18,7 @@ export async function GET() {
     const fileArray = repoFileTree.tree.filter((file: any) =>
       file.path.includes(".mdx")
     );
+    console.log(fileArray);
 
     const posts = [];
 
@@ -37,6 +38,7 @@ export async function GET() {
       },
     });
   } catch (e) {
+    console.log(e);
     return new Response("Error fetching posts", { status: 500 });
   }
 }
