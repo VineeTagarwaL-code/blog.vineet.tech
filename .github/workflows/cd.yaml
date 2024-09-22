@@ -1,0 +1,32 @@
+name: Deploy to production
+
+on: 
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install Dependencies and build
+        run: |
+          npm install
+          npm run build
+
+      - name: Deploy to EC2
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
+          script: |
+            cd /home/ubuntu/blogs.vineet.tech
+            sudo git pull origin main 
+            sudo bun install
+            sudo bun run build
+            sudo pm2 restart blog
