@@ -27,6 +27,6 @@ jobs:
           script: |
             cd /home/ubuntu/blogs.vineet.tech
             sudo git pull origin main 
-            sudo bun install
-            sudo bun run build
+            sudo npm install
+            sudo npm run build
             sudo pm2 restart blog
