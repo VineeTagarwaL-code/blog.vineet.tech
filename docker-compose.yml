@@ -3,7 +3,7 @@ version: '3.8'
 services:
   nextjs:
     image: vineetagarwal2004/blog:latest
-    container_name: blog.vineet.tech
+    container_name: blog
     working_dir: /app
     volumes:
       - ./:/app

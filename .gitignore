@@ -5,7 +5,8 @@
 /.pnp
 .pnp.js
 .yarn/install-state.gz
-
+public/robots.txt
+public/sitemap.xml
 # testing
 /coverage
 
