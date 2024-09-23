@@ -6,7 +6,7 @@ export const NavbarLinks: {
   icon?: JSX.Element;
 }[] = [
   {
-    name: "Blogs",
+    name: "Blog",
     url: "/blog",
   },
   {
