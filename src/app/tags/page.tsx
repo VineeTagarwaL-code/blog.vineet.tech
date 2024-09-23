@@ -1,6 +1,5 @@
 "use client";
 import { useEffect, useState } from "react";
-import axios from "axios";
 import { WidthWrapper } from "@/components/width-wrapper";
 import { LinkBlogs } from "@/components/Link-blogs";
 import { Skeleton } from "@/components/skeleton";

@@ -27,7 +27,7 @@ export const Navbar = () => {
                 : "text-muted-foreground"
             )}
           >
-            {link.name}
+            {link.icon ? link.icon : link.name}
           </a>
         ))}
       </div>

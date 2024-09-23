@@ -9,14 +9,6 @@ import rehypeHighlight from "rehype-highlight/lib";
 import rehypeSlug from "rehype-slug";
 import { SuccessResponse } from "@/lib/success";
 
-interface Meta {
-  id: string;
-  title: string;
-  description: string;
-  date: string; // Could also use `Date` type if date string is converted beforehand
-  tags: string[];
-}
-
 const getBlogs = withServerActionAsyncCatcher(async () => {
   const response = await axios.get(
     "https://api.github.com/repos/vineetagarwal-code/remote-blogpost/git/trees/main?recursive=1",
@@ -35,7 +27,7 @@ const getBlogs = withServerActionAsyncCatcher(async () => {
 
   const meta: Meta[] = [];
 
-  for (let file of fileArray) {
+  for (const file of fileArray) {
     const postResponse = await getBlogByName(file.path);
     if (postResponse.code === 200) {
       const blogMeta: Meta = postResponse.additional.blogPost.meta;
@@ -65,7 +57,7 @@ const getBlogByName = withServerActionAsyncCatcher(
     }
 
     const rawMDX = response.data;
-    const { frontmatter, content } = await compileMDX({
+    const { frontmatter, content } = await compileMDX<Frontmatter>({
       source: rawMDX,
       components: {
         CustomImage,
@@ -89,9 +81,8 @@ const getBlogByName = withServerActionAsyncCatcher(
     const id = file.replace(".mdx", "");
     const blogPost: {
       meta: Meta;
-      content: any;
+      content: React.ReactNode;
     } = {
-      //@ts-ignore
       meta: {
         id,
         ...frontmatter,

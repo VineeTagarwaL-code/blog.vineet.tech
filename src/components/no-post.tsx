@@ -10,7 +10,8 @@ export const NoPost = () => {
           No Blog Posts Yet
         </h2>
         <p className="text-muted-foreground text-center">
-          It looks like there aren't any blog posts available at the moment.
+          It looks like there aren&apos;t any blog posts available at the
+          moment.
         </p>
       </CardContent>
     </Card>

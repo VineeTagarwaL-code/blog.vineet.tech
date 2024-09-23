@@ -5,7 +5,6 @@ import { ThemeProvider } from "@/components/theme-provider";
 import Script from "next/script";
 import NextTopLoader from "nextjs-toploader";
 import { Navbar } from "@/components/navbar";
-import { Footer } from "@/components/footer";
 import { WidthWrapper } from "@/components/width-wrapper";
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -38,7 +37,7 @@ export default function RootLayout({
           <WidthWrapper className="select-none">
             <Navbar />
             {children}
-            <Footer />
+            {/* <Footer /> */}
           </WidthWrapper>
         </ThemeProvider>
         <Script
