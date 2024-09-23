@@ -3,7 +3,7 @@ import { ModeToggle } from "./theme-toggle";
 import { NavbarLinks } from "@/constants/navbar-link";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { cn } from "@/lib/utils";
+import { cn } from "@/utils/utils";
 export const Navbar = () => {
   const pathname = usePathname();
 

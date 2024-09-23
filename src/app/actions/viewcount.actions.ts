@@ -1,7 +1,6 @@
-// lib/viewActions.ts (create this file for server actions)
+"use server";
 import prisma from "@/lib/prisma";
 
-// Fetch the view count for a blog post
 export async function fetchViewCount(blog: string) {
   const viewCount = await prisma.count.findUnique({
     where: { blog },
@@ -14,14 +13,12 @@ export async function fetchViewCount(blog: string) {
   return viewCount.viewCount;
 }
 
-// Increment the view count for a blog post
 export async function incrementViewCount(blog: string) {
   const viewCount = await prisma.count.findUnique({
     where: { blog },
   });
 
   if (!viewCount) {
-    // If blog post does not exist in DB, create it with viewCount 1
     await prisma.count.create({
       data: {
         blog,
@@ -29,7 +26,6 @@ export async function incrementViewCount(blog: string) {
       },
     });
   } else {
-    // If blog post exists, increment view count
     await prisma.count.update({
       where: { blog },
       data: {

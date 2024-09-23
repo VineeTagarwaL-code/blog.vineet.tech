@@ -1,9 +1,13 @@
 import { WidthWrapper } from "@/components/width-wrapper";
-import getFormattedDate from "@/lib/formatdate";
-import { getPostByName } from "@/lib/posts";
-import Link from "next/link";
-import { fetchViewCount, incrementViewCount } from "@/lib/viewcount";
+import {
+  fetchViewCount,
+  incrementViewCount,
+} from "@/app/actions/viewcount.actions";
 import { Eye } from "lucide-react";
+import getFormattedDate from "@/utils/formatdate";
+import Link from "next/link";
+
+import { getBlogByName } from "@/app/actions/blog.action";
 export async function generateMetadata({
   params,
 }: {
@@ -15,7 +19,7 @@ export async function generateMetadata({
 }
 
 export default async function Page({ params }: { params: { name: string } }) {
-  const post = await getPostByName(`${params.name}.mdx`);
+  const post = await getBlogByName(`${params.name}.mdx`);
 
   if (!post)
     return (
@@ -29,10 +33,8 @@ export default async function Page({ params }: { params: { name: string } }) {
       </WidthWrapper>
     );
 
-  // Increment the view count when the page is visited
   await incrementViewCount(params.name);
 
-  // Fetch the current view count
   const viewCount = await fetchViewCount(params.name);
 
   return (
@@ -47,7 +49,7 @@ export default async function Page({ params }: { params: { name: string } }) {
           </Link>{" "}
           »{" "}
           <Link
-            href="/blogs"
+            href="/blog"
             className="hover:text-white font-semibold transition-all scale-[1.03]"
           >
             Blogs
@@ -55,16 +57,17 @@ export default async function Page({ params }: { params: { name: string } }) {
         </p>
         <div className="mt-3">
           <div className="text-4xl text-foreground font-semibold w-full flex justify-between items-center">
-            <p>{post.meta.title} </p>
+            <p>{post.additional.blogPost.meta.title} </p>
             <p className="text-muted-foreground text-base flex justify-center items-center rounded-xl px-3 py-2  gap-3">
               <Eye /> {viewCount} {/* Display view count */}
             </p>
           </div>
           <p className="text-muted-foreground mt-3 mb-12 ">
-            {getFormattedDate(post.meta.date)} · Vineet Agarwal
+            {getFormattedDate(post.additional.blogPost.meta.date)} · Vineet
+            Agarwal
           </p>
           <article className="prose-lg prose-li:list-disc prose-pre:px-0 mb-8">
-            {post.content}
+            {post.additional.blogPost.content}
           </article>
         </div>
       </div>

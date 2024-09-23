@@ -4,6 +4,8 @@ import axios from "axios";
 import { WidthWrapper } from "@/components/width-wrapper";
 import { LinkBlogs } from "@/components/Link-blogs";
 import { Skeleton } from "@/components/skeleton";
+import { getBlogByTag, getTags } from "../actions/tag.action";
+import { getBlogs } from "../actions/blog.action";
 
 interface Tag {
   tag: string;
@@ -15,14 +17,24 @@ const Page: React.FC = () => {
   const [blogs, setBlogs] = useState<Meta[]>([]);
   const [loadingBlogs, setLoadingBlogs] = useState(true);
 
-  // Fetch tags from the API
   useEffect(() => {
     const fetchTags = async () => {
       try {
-        const res = await axios.get("/api/tags");
-        setTags(res.data.tags);
-        const res1 = await axios.get(`/api/blogs`);
-        setBlogs(res1.data.blogs);
+        console.log("called");
+        const responseTags = await getTags();
+        const responseBlogs = await getBlogs();
+        if (
+          !responseBlogs ||
+          !responseTags ||
+          !responseBlogs.additional ||
+          !responseTags.additional
+        )
+          return;
+        console.log(responseTags.additional.tags);
+        console.log(responseBlogs.additional.meta);
+        setTags(responseTags.additional.tags);
+        setBlogs(responseBlogs.additional.meta);
+
         setLoadingBlogs(false);
       } catch (error) {
         console.error("Error fetching tags:", error);
@@ -32,12 +44,11 @@ const Page: React.FC = () => {
     fetchTags();
   }, []);
 
-  // Handle clicking on a tag to fetch blogs with that tag
   const handleTagClick = async (tag: string) => {
     setLoadingBlogs(true);
     try {
-      const res = await axios.get(`/api/blogs/${tag}`);
-      setBlogs(res.data.blogs);
+      const res = await getBlogByTag(tag);
+      setBlogs(res.additional.blogs);
     } catch (error) {
       console.error(`Error fetching blogs with tag ${tag}:`, error);
     } finally {

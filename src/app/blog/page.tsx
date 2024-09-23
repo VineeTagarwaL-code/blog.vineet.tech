@@ -1,11 +1,12 @@
 "use client";
 import { WidthWrapper } from "@/components/width-wrapper";
-import axios from "axios";
 import { useEffect, useState, useCallback } from "react";
 import { Skeleton } from "@/components/skeleton";
 import { Input } from "@/components/ui/input";
 import debounce from "lodash/debounce";
 import { LinkBlogs } from "@/components/Link-blogs";
+import { getBlogs } from "../actions/blog.action";
+import { NoPost } from "@/components/no-post";
 export default function Page() {
   const [posts, setPosts] = useState<Meta[] | undefined>(undefined);
   const [allPosts, setAllPosts] = useState<Meta[] | undefined>(undefined);
@@ -16,9 +17,9 @@ export default function Page() {
     const fetchPosts = async () => {
       try {
         setLoading(true);
-        const response = await axios.get("/api/blogs");
-        setPosts(response.data.blogs);
-        setAllPosts(response.data.blogs);
+        const response = await getBlogs();
+        setPosts(response.additional.meta);
+        setAllPosts(response.additional.meta);
         setLoading(false);
       } catch (e) {
         setLoading(false);
@@ -68,12 +69,10 @@ export default function Page() {
           className="bg-white dark:bg-stone-900/60 px-4 py-6 mb-16 w-full rounded-2xl"
         />
         <ul>
-          {posts ? (
+          {posts && !(posts.length == 0) ? (
             posts.map((post: Meta) => <LinkBlogs {...post} key={post.id} />)
           ) : (
-            <div>
-              <p>No posts...</p>
-            </div>
+            <NoPost />
           )}
         </ul>
       </WidthWrapper>

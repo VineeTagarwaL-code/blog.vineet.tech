@@ -4,7 +4,7 @@ export const NavbarLinks: {
 }[] = [
   {
     name: "Blogs",
-    url: "/blogs",
+    url: "/blog",
   },
   {
     name: "Tags",

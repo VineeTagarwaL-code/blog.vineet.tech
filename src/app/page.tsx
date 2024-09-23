@@ -1,12 +1,17 @@
+"use server";
 import { Blogs } from "@/components/blogs";
 import { Introduction } from "@/components/introduction";
-import { Navbar } from "@/components/navbar";
-import { WidthWrapper } from "@/components/width-wrapper";
-export const revalidate = 10;
-export default function Home() {
+import { getBlogs } from "./actions/blog.action";
+export default async function Home() {
+  let blogsMeta: Meta[] | undefined;
+  try {
+    const response = await getBlogs();
+    blogsMeta = response.additional.meta;
+  } catch (err) {
+    console.log("Error fetching blogs", err);
+  }
   return (
-    <WidthWrapper className="select-none">
-      <Navbar />
+    <>
       <Introduction
         welcomeText="Hi, there guys 👋"
         name="👨‍🎓 I’m Vineet Agarwal , a 20 year-old college student."
@@ -15,7 +20,7 @@ export default function Home() {
         residence="🏡  I live in Durgapur, west bengal"
         additional="I love to learn & explore a lot, this place will be my dumping ground for all the random thoughts, things, projects that i learn or work on."
       />
-      <Blogs />
-    </WidthWrapper>
+      <Blogs blogsMeta={blogsMeta} />
+    </>
   );
 }

@@ -3,7 +3,10 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import Script from "next/script";
-import { Toaster } from "@/components/ui/toaster";
+import NextTopLoader from "nextjs-toploader";
+import { Navbar } from "@/components/navbar";
+import { Footer } from "@/components/footer";
+import { WidthWrapper } from "@/components/width-wrapper";
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -30,13 +33,19 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased `}
       >
-        <ThemeProvider attribute="class">{children}</ThemeProvider>
+        <NextTopLoader color="gray" showSpinner={false} />
+        <ThemeProvider attribute="class">
+          <WidthWrapper className="select-none">
+            <Navbar />
+            {children}
+            <Footer />
+          </WidthWrapper>
+        </ThemeProvider>
         <Script
           defer
           src="https://unmani-vercel.vercel.app/script.js"
           data-website-id="8606e195-da59-401f-bde2-8b6837618dc1"
         ></Script>
-        <Toaster />
       </body>
     </html>
   );

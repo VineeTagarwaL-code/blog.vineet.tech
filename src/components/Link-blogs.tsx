@@ -1,5 +1,5 @@
 import Link from "next/link";
-import getFormattedDate from "@/lib/formatdate";
+import getFormattedDate from "@/utils/formatdate";
 export const LinkBlogs = (post: Meta) => {
   return (
     <Link href={`/blog/${post.id}`}>
