@@ -5,7 +5,6 @@ import { SuccessResponse } from "@/lib/success";
 import { ErrorHandler } from "@/lib/error";
 
 export const getTags = withServerActionAsyncCatcher(async () => {
-  console.log("getTags");
   const response = await getBlogs();
   const blogs = response.additional.meta;
   const alltags = blogs.map((blog: any) => blog.tags).flat();

@@ -37,7 +37,9 @@
     "rehype-slug": "^5.1.0",
     "sharp": "^0.33.5",
     "tailwind-merge": "^2.5.2",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "zod": "^3.23.8",
+    "zod-error": "^1.5.0"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.15",

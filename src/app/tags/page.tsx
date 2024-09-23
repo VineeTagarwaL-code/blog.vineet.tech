@@ -19,7 +19,6 @@ const Page: React.FC = () => {
   useEffect(() => {
     const fetchTags = async () => {
       try {
-        console.log("called");
         const responseTags = await getTags();
         const responseBlogs = await getBlogs();
         if (
@@ -29,8 +28,6 @@ const Page: React.FC = () => {
           !responseTags.additional
         )
           return;
-        console.log(responseTags.additional.tags);
-        console.log(responseBlogs.additional.meta);
         setTags(responseTags.additional.tags);
         setBlogs(responseBlogs.additional.meta);
 

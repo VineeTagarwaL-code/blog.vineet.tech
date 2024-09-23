@@ -1,32 +1,40 @@
-name: Deploy to production
+name: Deploy to Production
 
-on: 
+on:
   push:
     branches:
       - main
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+    - name: Checkout repository
+      uses: actions/checkout@v3
 
-      - name: Install Dependencies and build
-        run: |
-          npm install
-          npm run build
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v2
 
-      - name: Deploy to EC2
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
-          key: ${{ secrets.SSH_KEY }}
-          script: |
-            cd /home/ubuntu/blogs.vineet.tech
-            sudo git pull origin main 
-            sudo npm install
-            sudo npm run build
-            sudo pm2 restart blog
+    - name: Log in to Docker Hub
+      uses: docker/login-action@v2
+      with:
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+
+    - name: Build and push Docker image
+      run: |
+        docker build -t vineetagarwal2004/blog:${{ github.sha }} -t vineetagarwal2004/blog:latest .
+        docker push --all-tags vineetagarwal2004/blog
+
+    - name: Deploy to EC2
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        key: ${{ secrets.SSH_KEY }}
+        script: |
+          cd /home/ubuntu/blog.vineet.tech # Change to the directory where your docker-compose.yml file is located
+          docker-compose pull
+          docker-compose up -d --force-recreate --no-deps
+          docker image prune -f
