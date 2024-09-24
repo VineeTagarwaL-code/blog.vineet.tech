@@ -2,7 +2,7 @@ module.exports = {
   apps: [
     {
       name: "blog",
-      exec_mode: "cluster",
+      exec_mode: "fork",
       instances: "max", // Or a number of instances
       script: "./node_modules/next/dist/bin/next",
       args: "start",
