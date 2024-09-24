@@ -34,7 +34,7 @@ export default function RootLayout({
       >
         <NextTopLoader color="gray" showSpinner={false} />
         <ThemeProvider attribute="class">
-          <WidthWrapper className="select-none">
+          <WidthWrapper>
             <Navbar />
             {children}
             {/* <Footer /> */}

@@ -66,7 +66,7 @@ export default async function Page({ params }: { params: { name: string } }) {
             {getFormattedDate(post.additional.blogPost.meta.date)} · Vineet
             Agarwal
           </p>
-          <article className="prose-lg prose-li:list-disc prose-pre:px-0 mb-8">
+          <article className="prose-lg prose-li:list-disc  mb-8 prose-pre:bg-gray-800 prose-pre:px-3 prose-pre:text-white prose-p:text-gray-200 ">
             {post.additional.blogPost.content}
           </article>
         </div>
