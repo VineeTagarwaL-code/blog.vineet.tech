@@ -20,7 +20,9 @@ export const Introduction = ({
   return (
     <WidthWrapper className=" max-w-full md:max-w-[900px] mt-14">
       <section className="flex flex-col gap-4 text-muted-foreground">
-        <p className="text-6xl font-semibold text-foreground">{welcomeText}</p>
+        <p className="text-5xl md:text-6xl font-semibold text-foreground">
+          {welcomeText}
+        </p>
         <p className="text-lg">{name}</p>
         <p className="text-lg ">{profession}</p>
         <p className="text-lg">{works}</p>
