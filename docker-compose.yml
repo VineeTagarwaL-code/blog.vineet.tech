@@ -4,9 +4,7 @@ services:
   nextjs:
     image: vineetagarwal2004/blog:latest
     container_name: blog
-    working_dir: /app
-    volumes:
-      - ./:/app
+
     ports:
       - "3000:3000"
     env_file:
@@ -15,6 +13,4 @@ services:
     environment:
       - NODE_ENV=production 
 
-networks:
-  nextjs_network:
-    driver: bridge
+
