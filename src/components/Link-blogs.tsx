@@ -5,33 +5,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { motion } from "framer-motion";
 export const LinkBlogs = (post: Meta) => {
-  const [hoverPosition, setHoverPosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
-
-  const handleMouseMove = (e: any) => {
-    // Get window dimensions to keep the image inside the viewport
-    const windowWidth = window.innerWidth;
-    const windowHeight = window.innerHeight;
-    // Calculate the hover position, adjusting so the image stays in view
-    const imageOffsetX = 200; // 200px for the image width + some buffer
-    const imageOffsetY = 200; // 200px for the image height + some buffer
-    let posX = e.clientX;
-    let posY = e.clientY;
-
-    // Ensure the image stays within the right side of the screen
-    if (posX + imageOffsetX > windowWidth) {
-      posX = windowWidth - imageOffsetX;
-    }
-    // Ensure the image stays within the bottom side of the screen
-    if (posY + imageOffsetY > windowHeight) {
-      posY = windowHeight - imageOffsetY;
-    }
-
-    setHoverPosition({
-      x: posX,
-      y: posY,
-    });
-  };
 
   const handleMouseEnter = () => {
     setIsHovering(true);
@@ -46,7 +20,6 @@ export const LinkBlogs = (post: Meta) => {
       <div className="hover:scale-[1.04] transition-all rounded-xl bg-white/40 dark:bg-stone-900/60 px-6 py-7 mb-6 relative">
         <h2
           className="font-semibold text-2xl md:text-3xl relative group"
-          onMouseMove={handleMouseMove}
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
