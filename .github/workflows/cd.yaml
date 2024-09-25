@@ -26,7 +26,7 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           script: |
             cd /home/vineet/projects/blogs.vineet.tech
-            sudo git pull origin main 
-            sudo npm install
-            sudo npm run build
-            sudo pm2 restart blog
+            echo "${{ secrets.SUDO_PASSWORD }}" | -S git pull origin main
+            npm install
+            npm run build
+            pm2 restart blog
