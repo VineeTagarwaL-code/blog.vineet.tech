@@ -4,6 +4,11 @@
 
 @layer base {
   :root {
+    details{
+      background-color: rgba(0, 0, 0, .1);
+      padding: 1rem;
+      border-radius: 10px;
+    }
     --background: 0 0% 90%;
     --foreground: 0 0% 3.9%;
     --card: 0 0% 100%;
@@ -32,6 +37,12 @@
   }
 
   .dark {
+
+    details{
+      background-color: rgba(255, 255, 255, .1);
+      padding: 1rem;
+      border-radius: 10px;
+    }
     --background: 220 5% 12%;
     --foreground: 0 0% 98%;
     --card: 0 0% 3.9%;
@@ -58,11 +69,12 @@
     --chart-5: 340 75% 55%;
   }
 }
-details{
-  background-color: rgba(255, 255, 255, .1);
-  padding: 1rem;
-  border-radius: 10px;
+
+
+code {
+  text-wrap: wrap;
 }
+
 @layer base {
   * {
     @apply border-border;
