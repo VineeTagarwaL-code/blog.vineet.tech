@@ -9,6 +9,12 @@ const nextConfig = {
         port: "",
         pathname: "/VineeTagarwaL-code/remote-blogpost/main/images/**",
       },
+      {
+        protocol: "https",
+        hostname: "github.com",
+        port: "",
+        pathname: "/user-attachments/assets/*",
+      },
     ],
   },
 };

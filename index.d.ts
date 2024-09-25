@@ -2,6 +2,7 @@ type Meta = {
   id: string;
   title: string;
   date: string;
+  image: string;
   description: string;
   tags: string[];
 };

@@ -34,7 +34,6 @@ const getBlogs = withServerActionAsyncCatcher(async () => {
       meta.push(blogMeta);
     }
   }
-
   const message = "Blogs fetched successfully";
   const additional = { meta: meta };
   return new SuccessResponse(message, 200, additional).serialize();

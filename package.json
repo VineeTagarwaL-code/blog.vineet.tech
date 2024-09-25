@@ -21,6 +21,7 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "debounce": "^2.1.0",
+    "framer-motion": "^11.7.0",
     "highlight.js": "^11.10.0",
     "lodash": "^4.17.21",
     "lodash.debounce": "^4.0.8",
