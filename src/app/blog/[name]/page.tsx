@@ -55,7 +55,7 @@ export default async function Page({ params }: { params: { name: string } }) {
             Blogs
           </Link>
         </p>
-        <div className="mt-3">
+        <div className="mt-3 ">
           <div className="text-4xl text-foreground font-semibold w-full flex justify-between items-center">
             <p>{post.additional.blogPost.meta.title} </p>
             <p className="text-muted-foreground text-base flex justify-center items-center rounded-xl px-3 py-2  gap-3">
