@@ -26,6 +26,7 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           script: |
             cd /home/vineet/projects/blogs.vineet.tech
+            source ~/.bashrc
             git pull origin main
             npm install
             npm run build
