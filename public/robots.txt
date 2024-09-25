@@ -4,3 +4,6 @@ Allow: /
 
 # Host
 Host: https://blog.vineet.tech
+
+# Sitemaps
+Sitemap: https://blog.vineet.tech/sitemap.xml
