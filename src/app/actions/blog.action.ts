@@ -11,7 +11,7 @@ import { SuccessResponse } from "@/lib/success";
 
 const getBlogs = withServerActionAsyncCatcher(async () => {
   const response = await axios.get(
-    "https://api.github.com/repos/vineetagarwal-code/remote-blogpost/git/trees/main?recursive=1",
+    `https://api.github.com/repos/${process.env.GITHUB_USERNAME}/${process.env.GITHUB_REPO_NAME}/git/trees/main?recursive=1`,
     {
       headers: {
         Accept: "application/vnd.github+json",
@@ -25,7 +25,6 @@ const getBlogs = withServerActionAsyncCatcher(async () => {
     file.path.includes(".mdx")
   );
   const meta: Meta[] = [];
-
   for (const file of fileArray) {
     const postResponse = await getBlogByName(file.path);
     if (postResponse.code === 200) {
@@ -41,7 +40,7 @@ const getBlogs = withServerActionAsyncCatcher(async () => {
 const getBlogByName = withServerActionAsyncCatcher(
   async (file: string = "") => {
     const response = await axios.get(
-      `https://raw.githubusercontent.com/vineetagarwal-code/remote-blogpost/main/${file}`,
+      `https://raw.githubusercontent.com/${process.env.GITHUB_USERNAME}/${process.env.GITHUB_REPO_NAME}/main/${file}`,
       {
         headers: {
           Accept: "application/vnd.github+json",

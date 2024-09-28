@@ -6,6 +6,7 @@ import Script from "next/script";
 import NextTopLoader from "nextjs-toploader";
 import { Navbar } from "@/components/navbar";
 import { WidthWrapper } from "@/components/width-wrapper";
+import { ScrollTop } from "@/components/scroll-top";
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -37,6 +38,7 @@ export default function RootLayout({
           <WidthWrapper>
             <Navbar />
             {children}
+            <ScrollTop />
             {/* <Footer /> */}
           </WidthWrapper>
         </ThemeProvider>
