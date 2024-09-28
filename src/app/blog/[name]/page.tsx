@@ -21,7 +21,6 @@ export async function generateMetadata({
 
 export default async function Page({ params }: { params: { name: string } }) {
   const post = await getBlogByName(`${params.name}.mdx`);
-
   if (!post)
     return (
       <WidthWrapper className=" max-w-full md:max-w-[900px] mt-14">
