@@ -17,22 +17,22 @@ export const LinkBlogs = (post: Meta) => {
 
   return (
     <Link href={`/blog/${post.id}`}>
-      <div className="hover:scale-[1.04] transition-all rounded-xl bg-white/40 dark:bg-stone-900/60 px-6 py-7 mb-6 relative">
+      <div className="hover:scale-[1.04] transition-all rounded-xl bg-white/40 dark:bg-stone-900/60 px-6 py-7 mb-6 relative z-40">
         <h2
           className="font-semibold text-2xl md:text-3xl relative group"
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
-          {isHovering && (
+          {!isHovering && (
             <motion.div
-              className="rounded-2xl overflow-hidden hidden md:block"
+              className="rounded-2xl overflow-hidden hidden md:block z-50"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.8 }}
               transition={{ duration: 0.2 }}
               style={{
                 position: "absolute",
-                top: 50,
+                top: 38,
                 right: 60,
                 pointerEvents: "none",
                 zIndex: 50,
@@ -44,7 +44,7 @@ export const LinkBlogs = (post: Meta) => {
                 width={300}
                 height={300}
                 objectFit="cover"
-                className="rounded-2xl "
+                className="rounded-2xl z-50 "
               />
             </motion.div>
           )}

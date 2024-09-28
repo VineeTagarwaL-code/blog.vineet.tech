@@ -24,7 +24,6 @@ const getBlogs = withServerActionAsyncCatcher(async () => {
   const fileArray = repoFileTree.tree.filter((file: any) =>
     file.path.includes(".mdx")
   );
-
   const meta: Meta[] = [];
 
   for (const file of fileArray) {
