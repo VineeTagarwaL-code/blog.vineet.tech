@@ -10,6 +10,7 @@ import rehypeSlug from "rehype-slug";
 import { SuccessResponse } from "@/lib/success";
 
 const getBlogs = withServerActionAsyncCatcher(async () => {
+  console.log("Fetching blogs");
   const response = await axios.get(
     `https://api.github.com/repos/${process.env.GITHUB_USERNAME}/${process.env.GITHUB_REPO_NAME}/git/trees/main?recursive=1`,
     {

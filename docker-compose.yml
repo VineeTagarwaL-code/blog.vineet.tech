@@ -2,9 +2,8 @@ version: '3.8'
 
 services:
   nextjs:
-    image: vineetagarwal2004/blog:latest
+    image: my-blog-app:latest
     container_name: blog
-
     ports:
       - "3000:3000"
     env_file:

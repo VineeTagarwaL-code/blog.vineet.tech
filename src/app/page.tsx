@@ -1,7 +1,8 @@
-"use server";
 import { Blogs } from "@/components/blogs";
 import { Introduction } from "@/components/introduction";
 import { getBlogs } from "./actions/blog.action";
+
+export const revalidate = 10;
 export default async function Home() {
   let blogsMeta: Meta[] | undefined;
   try {

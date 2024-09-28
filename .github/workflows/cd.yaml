@@ -24,7 +24,7 @@ jobs:
 
     - name: Build and push Docker image
       run: |
-        docker build -t vineetagarwal2004/blog:${{ github.sha }} -t vineetagarwal2004/blog:latest .
+        docker build -t vineetagarwal2004/blog:${{ github.sha }} -t vineetagarwal2004/blog:latest . --no-cache
         docker push --all-tags vineetagarwal2004/blog
 
     - name: Deploy to EC2
