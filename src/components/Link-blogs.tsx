@@ -23,7 +23,7 @@ export const LinkBlogs = (post: Meta) => {
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
-          {!isHovering && (
+          {isHovering && (
             <motion.div
               className="rounded-2xl overflow-hidden hidden md:block z-50"
               initial={{ opacity: 0, scale: 0.8 }}
