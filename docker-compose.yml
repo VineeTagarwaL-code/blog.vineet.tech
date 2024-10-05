@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   nextjs:
-    image: my-blog-app:latest
+    image: vineetagarwal2004/blog:latest
     container_name: blog
     ports:
       - "3000:3000"

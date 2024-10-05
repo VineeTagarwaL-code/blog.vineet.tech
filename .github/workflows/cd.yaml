@@ -34,7 +34,7 @@ jobs:
         username: ${{ secrets.USERNAME }}
         key: ${{ secrets.SSH_KEY }}
         script: |
-          cd /home/vineet/projects/blogs.vineet.tech
-          docker compose pull
-          docker compose up -d --force-recreate --no-deps
+          cd /home/ubuntu/compose-files/blog
+          docker-compose pull
+          docker-compose up -d --force-recreate --no-deps
           docker image prune -f
