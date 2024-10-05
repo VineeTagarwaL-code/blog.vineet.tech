@@ -7,9 +7,8 @@ import {
   useMotionValue,
   useSpring,
 } from "framer-motion";
-import { Link } from "lucide-react";
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 type TitleHoverProps = {
   children: React.ReactNode;
@@ -27,19 +26,13 @@ export const TitleHover = ({
   url,
 }: TitleHoverProps) => {
   const [isOpen, setOpen] = useState<boolean>(false);
-  const [isMounted, setMounted] = useState<boolean>(false);
-
-  useEffect(() => {
-    console.log(imageLink);
-    setMounted(true);
-  }, []);
 
   const sprinConfig = { stiffness: 100, damping: 15 };
   const x = useMotionValue(0);
 
   const translateX = useSpring(x, sprinConfig);
 
-  let mouseMoveHandler = (event: any) => {
+  const mouseMoveHandler = (event: any) => {
     const targetRect = event.target.getBoundingClientRect();
     const eventOffsetX = event.clientX - targetRect.left;
     const offsetFromCenter = (eventOffsetX - targetRect.width / 2) / 2; // Reduce the effect to make it subtle
@@ -47,17 +40,6 @@ export const TitleHover = ({
   };
   return (
     <>
-      {/* {isMounted ? (
-        <Image
-          src={image}
-          alt="hidden image"
-          width={width}
-          height={height}
-          layout="responsive"
-          priority={true}
-        />
-      ) : null} */}
-
       <HoverCard.Root
         openDelay={50}
         closeDelay={100}

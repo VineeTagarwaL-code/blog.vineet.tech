@@ -1,25 +1,10 @@
 "use client";
 import getFormattedDate from "@/utils/formatdate";
-import { useState } from "react";
 import { TitleHover } from "./title-hover";
 export const LinkBlogs = (post: Meta) => {
-  const [isHovering, setIsHovering] = useState(false);
-
-  const handleMouseEnter = () => {
-    setIsHovering(true);
-  };
-
-  const handleMouseLeave = () => {
-    setIsHovering(false);
-  };
-
   return (
     <div className="hover:scale-[1.04] transition-all rounded-xl bg-white/40 dark:bg-stone-900/60 px-6 py-7 mb-6 relative z-40">
-      <h2
-        className="font-semibold text-2xl md:text-3xl relative group"
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-      >
+      <h2 className="font-semibold text-2xl md:text-3xl relative group">
         <TitleHover
           imageLink={post.image}
           width={200}
