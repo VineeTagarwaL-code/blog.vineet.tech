@@ -28,7 +28,7 @@ export const ScrollTop = () => {
 
   return (
     <div
-      className="fixed bottom-5 right-5 bg-gray-800 text-white p-2 rounded-full cursor-pointer"
+      className="fixed bottom-5 right-5 bg-gray-800 text-white p-2 rounded-full cursor-pointer z-50"
       style={{ display: isVisible ? "block" : "none" }}
       onClick={scrollToTop}
     >
