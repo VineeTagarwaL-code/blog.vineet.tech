@@ -1,27 +1,44 @@
-import { Blogs } from "@/components/blogs";
+"use client";
 import { Introduction } from "@/components/introduction";
-import { getBlogs } from "./actions/blog.action";
+import { WidthWrapper } from "@/components/width-wrapper";
+import { ABOUT } from "@/constants/misc";
+import { Heading } from "@/components/Heading";
+import { AnimatePresence, motion } from "framer-motion";
+import { Blogs } from "@/components/Blogs";
+import { Footer } from "@/components/Footer";
 
-export const revalidate = 10;
-export default async function Home() {
-  let blogsMeta: Meta[] | undefined;
-  try {
-    const response = await getBlogs();
-    blogsMeta = response.additional.meta;
-  } catch (err) {
-    console.log("Error fetching blogs", err);
-  }
+export default function Home() {
   return (
-    <>
-      <Introduction
-        welcomeText="Hi, there guys 👋"
-        name="👨‍🎓 I’m Vineet Agarwal , a 20 year-old college student."
-        profession="👨‍💻 I work at concertpal as a software engineer."
-        works="⚒️ I mainly work with TS, React, Node, and Go."
-        residence="🏡  I live in Durgapur, west bengal"
-        additional="I love to learn & explore a lot, this place will be my dumping ground for all the random thoughts, things, projects that i learn or work on."
-      />
-      <Blogs blogsMeta={blogsMeta} />
-    </>
+    <AnimatePresence>
+      <motion.div
+        initial={{
+          opacity: 0,
+          y: 20,
+          filter: "blur(5px)",
+        }}
+        animate={{
+          opacity: 1,
+          y: 0,
+          filter: "blur(0px)",
+        }}
+        transition={{
+          duration: 0.3,
+        }}
+      >
+        <WidthWrapper className=" max-w-full md:max-w-[810px] mt-14 px-2">
+          <Introduction
+            name="Vineet"
+            desc="I love decoding 0's & 1's"
+            about={ABOUT}
+            githubUsername="vineetagarwal-code"
+          />
+          <Heading classname="text-7xl mt-12">
+            <span>BLOGS</span>
+          </Heading>
+          <Blogs />
+          <Footer />
+        </WidthWrapper>
+      </motion.div>
+    </AnimatePresence>
   );
 }

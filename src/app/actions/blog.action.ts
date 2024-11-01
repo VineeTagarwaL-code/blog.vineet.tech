@@ -9,6 +9,9 @@ import rehypeHighlight from "rehype-highlight/lib";
 import rehypeSlug from "rehype-slug";
 import { SuccessResponse } from "@/lib/success";
 
+export const blogsGet = async () => {
+  return { hi: "there" };
+};
 const getBlogs = withServerActionAsyncCatcher(async () => {
   const response = await axios.get(
     `https://api.github.com/repos/${process.env.GITHUB_USERNAME}/${process.env.GITHUB_REPO_NAME}/git/trees/main?recursive=1`,

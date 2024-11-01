@@ -4,9 +4,9 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import Script from "next/script";
 import NextTopLoader from "nextjs-toploader";
-import { Navbar } from "@/components/navbar";
-import { WidthWrapper } from "@/components/width-wrapper";
-import { ScrollTop } from "@/components/scroll-top";
+import Provider from "@/utils/Provider";
+import { Heading } from "@/components/Heading";
+
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -35,12 +35,10 @@ export default function RootLayout({
       >
         <NextTopLoader color="gray" showSpinner={false} />
         <ThemeProvider attribute="class">
-          <WidthWrapper>
-            <Navbar />
-            {children}
-            <ScrollTop />
-            {/* <Footer /> */}
-          </WidthWrapper>
+          <Provider>{children}</Provider>
+          <Heading classname="bg-gradient-to-b from-neutral-800 to-neutral-600 text-4xl  md:text-7xl">
+            <span>VINEET.TECH</span>
+          </Heading>
         </ThemeProvider>
         <Script
           defer

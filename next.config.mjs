@@ -15,6 +15,12 @@ const nextConfig = {
         port: "",
         pathname: "/user-attachments/assets/*",
       },
+      {
+        protocol: "https",
+        hostname: "www.vineet.tech",
+        port: "",
+        pathname: "/_next/static/media/**",
+      },
     ],
   },
 };

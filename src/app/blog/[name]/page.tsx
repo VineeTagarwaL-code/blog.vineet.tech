@@ -8,7 +8,8 @@ import getFormattedDate from "@/utils/formatdate";
 import Link from "next/link";
 import Image from "next/image";
 import { getBlogByName } from "@/app/actions/blog.action";
-import { BlogEnd } from "@/components/blog-end";
+import ShareOnTwitter from "@/components/Share-twitter";
+
 export async function generateMetadata({
   params,
 }: {
@@ -66,7 +67,7 @@ export default async function Page({ params }: { params: { name: string } }) {
             {getFormattedDate(post.additional.blogPost.meta.date)} · Vineet
             Agarwal
           </p>
-          <article className="prose-base md:prose-lg prose-li:list-disc  mb-8  prose-pre:bg-gray-300 dark:prose-pre:bg-gray-800 prose-pre:px-3 prose-pre:text-gray-900 dark:prose-pre:text-white dark:prose-p:text-gray-200 prose-h1:underline prose-h1:decoratin-slate-600 ">
+          <article className="prose-base md:prose-lg prose-li:list-disc  mb-8  prose-pre:bg-gray-400 dark:prose-pre:bg-gray-800 prose-pre:px-3 prose-pre:text-gray-900 dark:prose-pre:text-white dark:prose-p:text-gray-400  prose-h1:decoratin-slate-600 ">
             <Image
               src={post.additional.blogPost.meta.image}
               alt={post.additional.blogPost.meta.title}
@@ -78,8 +79,8 @@ export default async function Page({ params }: { params: { name: string } }) {
             {post.additional.blogPost.content}
           </article>
         </div>
+        <ShareOnTwitter twitter_username="vineetwts" />
       </div>
-      <BlogEnd />
     </WidthWrapper>
   );
 }

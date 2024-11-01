@@ -1,35 +1,44 @@
-import { Socials } from "./socials";
-import { WidthWrapper } from "./width-wrapper";
+import { GithubGraph } from "./ui/github";
+import React from "react";
+import Image from "next/image";
+import { About } from "./About";
 
 type IntroductionProps = {
-  welcomeText: string;
   name: string;
-  profession: string;
-  works: string;
-  residence: string;
-  additional: string;
+  desc: string;
+  about: React.ReactNode;
+  githubUsername: string;
 };
 export const Introduction = ({
-  welcomeText,
   name,
-  profession,
-  works,
-  residence,
-  additional,
+  desc,
+  about,
+  githubUsername,
 }: IntroductionProps) => {
   return (
-    <WidthWrapper className=" max-w-full md:max-w-[900px] mt-14">
-      <section className="flex flex-col gap-4 text-muted-foreground">
-        <p className="text-5xl md:text-6xl font-semibold text-foreground">
-          {welcomeText}
-        </p>
-        <p className="text-lg">{name}</p>
-        <p className="text-lg ">{profession}</p>
-        <p className="text-lg">{works}</p>
-        <p className="text-lg">{residence}</p>
-        <p className="text-lg mt-8">{additional}</p>
-        <Socials />
-      </section>
-    </WidthWrapper>
+    <div>
+      <div className="flex justify-between items-center w-full ">
+        <div className="flex flex-col gap-4">
+          <p className="font-bold text-3xl  md:text-7xl">
+            Hi, I&apos;m {name}👋
+          </p>
+          <span className="text-xl md:text-xl font-semibold text-gray-200">
+            {desc}
+          </span>
+        </div>
+        <Image
+          src={"/user_image.webp"}
+          alt=""
+          width={150}
+          height={150}
+          className="rounded-full"
+        />
+      </div>
+      <About className="mb-8">{about}</About>
+      <GithubGraph
+        username={githubUsername}
+        colorPallete={["#1e1e2f", "#5a3e7a", "#7e5aa2", "#a87cc3", "#d9a9e6"]}
+      />
+    </div>
   );
 };
