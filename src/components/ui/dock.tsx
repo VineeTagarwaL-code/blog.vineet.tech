@@ -1,6 +1,5 @@
 "use client";
 
-import { VariantProps, cva } from "class-variance-authority";
 import React, { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { cn } from "@/lib/utils";
@@ -77,6 +76,7 @@ const DockMobile = React.forwardRef<HTMLDivElement, DockProps>(
     );
   }
 );
+DockMobile.displayName = "DockMobile";
 
 const DockDesktop = React.forwardRef<HTMLDivElement, DockProps>(
   ({ DesktopClassName, navbar }) => {
@@ -163,5 +163,5 @@ const DockIcon = React.forwardRef<HTMLDivElement, DockIconProps>(
 
 DockIcon.displayName = "DockIcon";
 Dock.displayName = "Dock";
-
+DockDesktop.displayName = "DockDesktop";
 export { Dock };
