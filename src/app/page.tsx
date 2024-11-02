@@ -2,7 +2,6 @@
 import { Introduction } from "@/components/introduction";
 import { DATA } from "@/data/info";
 import { About } from "@/components/About";
-import { ModeToggle } from "@/components/theme-toggle";
 import { Blogs } from "@/components/Blogs";
 import { Footer } from "@/components/Footer";
 import { Heading } from "@/components/Heading";

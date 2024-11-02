@@ -44,9 +44,12 @@ const Dock = React.forwardRef<HTMLDivElement, DockProps>(({ className }) => {
   );
 });
 
-const DockIcon = React.forwardRef<HTMLDivElement, DockProps>(
-  ({ className }) => {
-    return <div></div>;
-  }
-);
+// const DockIcon = React.forwardRef<HTMLDivElement, DockProps>(
+//   ({ className }) => {
+//     return <div></div>;
+//   }
+// );
+
+Dock.displayName = "Dock";
+
 export { Dock };
