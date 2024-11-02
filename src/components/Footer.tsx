@@ -1,14 +1,17 @@
 import Link from "next/link";
+import { Heading } from "./Heading";
 export const Footer = () => {
   return (
-    <div className=" text-white min-h-[300px] flex flex-col items-center justify-center px-4 py-16 text-center">
+    <div className=" text-white min-h-[300px] flex flex-col items-center justify-center px-4  text-center">
       <Link
         href="mailto:your-email@example.com"
-        className="inline-block bg-white text-black px-3 py-1 rounded-full text-sm font-medium mb-6 cursor-pointer"
+        className="inline-block bg-gray-300 dark:bg-gray-700 text-foreground px-3 py-1 rounded-full text-sm font-medium mb-6 cursor-pointer"
       >
-        <span>Contact</span>
+        <span className="text-foreground ">Contact</span>
       </Link>
-      <h2 className="text-4xl md:text-5xl font-bold mb-6">Get in Touch</h2>
+      <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
+        Get in Touch
+      </h2>
       <p className="max-w-2xl text-gray-400 text-lg">
         Want to chat? Just shoot me a dm{" "}
         <Link
@@ -18,6 +21,7 @@ export const Footer = () => {
           on twitter
         </Link>{" "}
       </p>
+      <Heading classname="text-7xl my-8">VINEET.TECH</Heading>
     </div>
   );
 };

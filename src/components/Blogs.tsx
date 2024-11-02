@@ -4,7 +4,15 @@ import { getBlogs } from "@/app/actions/blog.action";
 import { useQuery } from "@tanstack/react-query";
 import { Blog, BlogSkeleton } from "./cards/Blog-card";
 import { NoPost } from "./cards/Blog-card";
-export function Blogs() {
+import { Input } from "./ui/Input";
+import { Heading } from "./Heading";
+import { BlurDiv } from "./ui/Blue-fade";
+import { DELAY } from "@/constants/misc";
+
+type blogProps = {
+  showMore: boolean;
+};
+export function Blogs({ showMore }: blogProps) {
   const [searchQuery, setSearchQuery] = useState(""); // State for the search query
 
   const {
@@ -24,27 +32,31 @@ export function Blogs() {
 
   if (isLoading)
     return (
-      <div className="mt-6">
-        <BlogSkeleton count={2} className="mt-3" />
-      </div>
+      <BlurDiv delay={DELAY * 1.99}>
+        <div className="mt-6">
+          <BlogSkeleton count={2} className="mt-3" />
+        </div>
+      </BlurDiv>
     );
   if (error) return <p>Error: {error.message}</p>;
 
   return (
-    <div className="mt-16 min-h-[50vh]">
-      <input
-        type="text"
-        placeholder="Search by title..."
-        value={searchQuery}
-        onChange={(e) => setSearchQuery(e.target.value)}
-        className="p-2 border rounded-2xl mb-8 w-full bg-gray-500/20"
-      />
+    <BlurDiv delay={DELAY * 1.99}>
+      <section className="overflow-hidden">
+        <Input
+          type="search"
+          placeholder="Search by title..."
+          value={searchQuery}
+          onChange={(e: any) => setSearchQuery(e.target.value)}
+          className="py-3 px-3 border rounded-2xl mb-8 w-full bg-gray-500/20"
+        />
 
-      {filteredBlogs.length > 0 ? (
-        filteredBlogs.map((blog) => <Blog key={blog.id} {...blog} />)
-      ) : (
-        <NoPost />
-      )}
-    </div>
+        {filteredBlogs.length > 0 ? (
+          filteredBlogs.map((blog) => <Blog key={blog.id} {...blog} />)
+        ) : (
+          <NoPost />
+        )}
+      </section>
+    </BlurDiv>
   );
 }

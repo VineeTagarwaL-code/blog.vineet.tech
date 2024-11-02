@@ -1,44 +1,24 @@
 "use client";
 import { Introduction } from "@/components/introduction";
-import { WidthWrapper } from "@/components/width-wrapper";
-import { ABOUT } from "@/constants/misc";
-import { Heading } from "@/components/Heading";
-import { AnimatePresence, motion } from "framer-motion";
+import { DATA } from "@/data/info";
+import { About } from "@/components/About";
+import { ModeToggle } from "@/components/theme-toggle";
 import { Blogs } from "@/components/Blogs";
 import { Footer } from "@/components/Footer";
-
+import { Heading } from "@/components/Heading";
+import { BlurDiv } from "@/components/ui/Blue-fade";
+import { DELAY } from "@/constants/misc";
 export default function Home() {
   return (
-    <AnimatePresence>
-      <motion.div
-        initial={{
-          opacity: 0,
-          y: 20,
-          filter: "blur(5px)",
-        }}
-        animate={{
-          opacity: 1,
-          y: 0,
-          filter: "blur(0px)",
-        }}
-        transition={{
-          duration: 0.3,
-        }}
-      >
-        <WidthWrapper className=" max-w-full md:max-w-[810px] mt-14 px-2">
-          <Introduction
-            name="Vineet"
-            desc="I love decoding 0's & 1's"
-            about={ABOUT}
-            githubUsername="vineetagarwal-code"
-          />
-          <Heading classname="text-7xl mt-12">
-            <span>BLOGS</span>
-          </Heading>
-          <Blogs />
-          <Footer />
-        </WidthWrapper>
-      </motion.div>
-    </AnimatePresence>
+    <main className="flex  flex-col min-h-[100dvh] space-y-8 scroll-smooth">
+      <ModeToggle />
+      <Introduction name={DATA.name} desc={DATA.shortDescription} />
+      <About about={DATA.about} />
+      <BlurDiv delay={DELAY * 1.88}>
+        <Heading classname="text-7xl my-8">BLOGS</Heading>
+      </BlurDiv>
+      <Blogs showMore />
+      <Footer />
+    </main>
   );
 }

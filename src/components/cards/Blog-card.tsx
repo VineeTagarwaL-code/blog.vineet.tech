@@ -9,7 +9,7 @@ import { Card, CardContent } from "@/components/ui/card";
 export const Blog = (post: Meta) => {
   return (
     <Link href={`/blog/${post.id}`}>
-      <div className="hover:scale-[1.04] transition-all rounded-xl cursor-pointer bg-white/40 dark:bg-stone-900/20 border-muted border-[1px] border-solid px-6 py-7 mb-6 relative z-40">
+      <div className="hover:scale-[1.04] transition-all rounded-xl cursor-pointer bg-gray-400/20 dark:bg-stone-900/20 border-muted border-[1px] border-solid px-6 py-7 mb-6 relative z-40">
         <h2 className="font-semibold text-2xl md:text-3xl relative group">
           <TitleHover
             imageLink={post.image}

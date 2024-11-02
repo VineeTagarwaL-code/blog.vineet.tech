@@ -1,4 +1,5 @@
 "use client";
+import { color } from "framer-motion";
 import { useCallback, useEffect, useState } from "react";
 
 import { Activity, ActivityCalendar } from "react-activity-calendar";
@@ -37,7 +38,7 @@ export const GithubGraph = ({
   };
 
   return (
-    <div className="mt-7">
+    <div className="mt-16">
       <ActivityCalendar
         data={contribution}
         maxLevel={4}
@@ -45,13 +46,9 @@ export const GithubGraph = ({
         loading={loading}
         labels={label}
         theme={{
-          dark: colorPallete ?? [
-            "#ebedf0",
-            "#9be9a8",
-            "#40c463",
-            "#30a14e",
-            "#216e39",
-          ],
+          light: colorPallete
+            ? colorPallete
+            : ["#ebedf0", "#9be9a8", "#40c463", "#30a14e", "#216e39"],
         }}
       />
     </div>

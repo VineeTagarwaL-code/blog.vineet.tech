@@ -1,15 +1,31 @@
-import { cn } from "@/utils/utils";
+import { BlurDiv } from "./ui/Blue-fade";
+import { DELAY } from "@/constants/misc";
+import Markdown from "react-markdown";
+import { DATA } from "@/data/info";
+import { GithubGraph } from "./ui/github";
 export const About = ({
-  children,
   className,
+  about,
 }: {
-  children: React.ReactNode;
   className?: string;
+  about: string;
 }) => {
   return (
-    <div className={cn(className, "mt-10")}>
-      <h1 className="font-bold text-lg">About</h1>
-      <span className="text-muted-foreground ">{children}</span>
-    </div>
+    <section id="about">
+      <BlurDiv delay={DELAY * 1.45}>
+        <h2 className="text-xl font-bold">About</h2>
+      </BlurDiv>
+      <BlurDiv delay={DELAY * 1.55}>
+        <Markdown className="prose max-w-full text-pretty font-sans text-sm text-muted-foreground dark:prose-invert">
+          {DATA.about}
+        </Markdown>
+      </BlurDiv>
+      <BlurDiv delay={DELAY * 1.77}>
+        <GithubGraph
+          username={DATA.githubUsername}
+          colorPallete={["#0D0D0D", "#1A1A1A", "#262626", "#454545", "#5C5C5C"]}
+        />
+      </BlurDiv>
+    </section>
   );
 };

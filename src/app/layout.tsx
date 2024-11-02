@@ -31,14 +31,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased `}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased   min-h-screen bg-background font-sans  max-w-2xl mx-auto py-12 sm:py-24 px-6 `}
       >
         <NextTopLoader color="gray" showSpinner={false} />
         <ThemeProvider attribute="class">
           <Provider>{children}</Provider>
-          <Heading classname="bg-gradient-to-b from-neutral-800 to-neutral-600 text-4xl  md:text-7xl">
-            <span>VINEET.TECH</span>
-          </Heading>
         </ThemeProvider>
         <Script
           defer

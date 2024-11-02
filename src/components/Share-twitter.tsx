@@ -13,9 +13,11 @@ export default function ShareOnTwitter({
   };
 
   return (
-    <div className=" text-white min-h-[300px] flex flex-col items-center justify-center px-4 py-16 text-center rounded-lg shadow-lg">
-      <h2 className="text-4xl md:text-5xl font-bold mb-6">Liked the blog?</h2>
-      <p className="max-w-2xl text-gray-400 text-lg mb-8">
+    <div className="border-t-2 border-solid border-gray-400 text-white min-h-[300px] flex flex-col items-center justify-center px-4 py-16 text-center  ">
+      <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
+        Liked the blog?
+      </h2>
+      <p className="max-w-2xl  text-lg mb-8 text-foreground">
         If you enjoyed reading this post, why not share it with your friends on
         Twitter?
       </p>
