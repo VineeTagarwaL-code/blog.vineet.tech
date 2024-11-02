@@ -1,6 +1,6 @@
 import { Blogs } from "@/components/Blogs";
 import { Heading } from "@/components/Heading";
-import { BlurDiv } from "@/components/ui/Blue-fade";
+import { BlurDiv } from "@/components/ui/Blur";
 import { DELAY } from "@/constants/misc";
 
 const BlogPage = () => {

@@ -6,7 +6,7 @@ import { ModeToggle } from "@/components/theme-toggle";
 import { Blogs } from "@/components/Blogs";
 import { Footer } from "@/components/Footer";
 import { Heading } from "@/components/Heading";
-import { BlurDiv } from "@/components/ui/Blue-fade";
+import { BlurDiv } from "@/components/ui/Blur";
 import { DELAY } from "@/constants/misc";
 export default function Home() {
   return (

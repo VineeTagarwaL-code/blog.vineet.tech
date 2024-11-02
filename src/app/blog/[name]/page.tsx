@@ -3,7 +3,7 @@ import {
   incrementViewCount,
 } from "@/app/actions/viewcount.actions";
 import { Eye } from "lucide-react";
-import getFormattedDate from "@/utils/formatdate";
+import getFormattedDate from "@/lib/formatdate";
 import Link from "next/link";
 import Image from "next/image";
 import { getBlogByName } from "@/app/actions/blog.action";

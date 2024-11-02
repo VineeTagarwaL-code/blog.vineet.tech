@@ -5,12 +5,11 @@ import { useQuery } from "@tanstack/react-query";
 import { Blog, BlogSkeleton } from "./cards/Blog-card";
 import { NoPost } from "./cards/Blog-card";
 import { Input } from "./ui/Input";
-import { Heading } from "./Heading";
-import { BlurDiv } from "./ui/Blue-fade";
+import { BlurDiv } from "./ui/Blur";
 import { DELAY } from "@/constants/misc";
 
 type blogProps = {
-  showMore: boolean;
+  showMore?: boolean;
 };
 export function Blogs({ showMore }: blogProps) {
   const [searchQuery, setSearchQuery] = useState(""); // State for the search query
@@ -39,10 +38,9 @@ export function Blogs({ showMore }: blogProps) {
       </BlurDiv>
     );
   if (error) return <p>Error: {error.message}</p>;
-
   return (
     <BlurDiv delay={DELAY * 1.99}>
-      <section className="overflow-hidden">
+      <section>
         <Input
           type="search"
           placeholder="Search by title..."
@@ -56,6 +54,7 @@ export function Blogs({ showMore }: blogProps) {
         ) : (
           <NoPost />
         )}
+        {showMore && <div>&qout;</div>}
       </section>
     </BlurDiv>
   );

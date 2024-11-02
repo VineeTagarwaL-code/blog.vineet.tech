@@ -1,8 +1,8 @@
 "use client";
-import getFormattedDate from "@/utils/formatdate";
+import getFormattedDate from "@/lib/formatdate";
 import { TitleHover } from "../title-hover";
 import Link from "next/link";
-import { cn } from "@/utils/utils";
+import { cn } from "@/lib/utils";
 import { FileText } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 

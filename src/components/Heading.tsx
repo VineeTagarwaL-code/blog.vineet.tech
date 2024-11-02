@@ -2,7 +2,7 @@
  * Compoenent to generate cool looking headings
  */
 
-import { cn } from "@/utils/utils";
+import { cn } from "@/lib/utils";
 
 export const Heading = ({
   children,

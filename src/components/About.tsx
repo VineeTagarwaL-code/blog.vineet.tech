@@ -1,15 +1,9 @@
-import { BlurDiv } from "./ui/Blue-fade";
+import { BlurDiv } from "./ui/Blur";
 import { DELAY } from "@/constants/misc";
 import Markdown from "react-markdown";
 import { DATA } from "@/data/info";
 import { GithubGraph } from "./ui/github";
-export const About = ({
-  className,
-  about,
-}: {
-  className?: string;
-  about: string;
-}) => {
+export const About = ({ about }: { about: string }) => {
   return (
     <section id="about">
       <BlurDiv delay={DELAY * 1.45}>
@@ -17,7 +11,7 @@ export const About = ({
       </BlurDiv>
       <BlurDiv delay={DELAY * 1.55}>
         <Markdown className="prose max-w-full text-pretty font-sans text-sm text-muted-foreground dark:prose-invert">
-          {DATA.about}
+          {about}
         </Markdown>
       </BlurDiv>
       <BlurDiv delay={DELAY * 1.77}>

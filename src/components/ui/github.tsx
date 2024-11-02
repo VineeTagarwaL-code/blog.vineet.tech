@@ -1,5 +1,4 @@
 "use client";
-import { color } from "framer-motion";
 import { useCallback, useEffect, useState } from "react";
 
 import { Activity, ActivityCalendar } from "react-activity-calendar";

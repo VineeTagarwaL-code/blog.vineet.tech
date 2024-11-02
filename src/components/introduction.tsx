@@ -1,5 +1,5 @@
 import React from "react";
-import { BlurDiv } from "./ui/Blue-fade";
+import { BlurDiv } from "./ui/Blur";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/Avatar";
 import { DATA } from "@/data/info";
 import { DELAY } from "@/constants/misc";

@@ -1,4 +1,5 @@
 "use client";
+import { cn } from "@/lib/utils";
 import { useInView, motion } from "framer-motion";
 import { MutableRefObject, useRef } from "react";
 
@@ -58,6 +59,7 @@ const BlurDiv = ({
         duration,
         ease: "easeOut",
       }}
+      className={cn(className)}
     >
       {children}
     </motion.div>
