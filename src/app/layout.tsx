@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import Script from "next/script";
 import NextTopLoader from "nextjs-toploader";
 import Provider from "@/lib/Provider";
+import Navbar from "@/components/Navbar";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -35,6 +36,7 @@ export default function RootLayout({
         <NextTopLoader color="gray" showSpinner={false} />
         <ThemeProvider attribute="class">
           <Provider>{children}</Provider>
+          <Navbar />
         </ThemeProvider>
         <Script
           defer

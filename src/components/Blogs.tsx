@@ -54,7 +54,7 @@ export function Blogs({ showMore }: blogProps) {
         ) : (
           <NoPost />
         )}
-        {showMore && <div>&qout;</div>}
+        {showMore && <div></div>}
       </section>
     </BlurDiv>
   );

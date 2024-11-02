@@ -10,8 +10,7 @@ import { BlurDiv } from "@/components/ui/Blur";
 import { DELAY } from "@/constants/misc";
 export default function Home() {
   return (
-    <main className="flex  flex-col min-h-[100dvh] space-y-8 scroll-smooth">
-      <ModeToggle />
+    <main className="flex  flex-col min-h-[100dvh] my-16 scroll-smooth">
       <Introduction name={DATA.name} desc={DATA.shortDescription} />
       <About about={DATA.about} />
       <BlurDiv delay={DELAY * 1.88}>
