@@ -21,10 +21,10 @@ export const DATA: dataProps = {
   image:
     "https://www.vineet.tech/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fimage.a96af8f3.jpg&w=640&q=75",
   shortDescription:
-    "Software Engineer turned Entrepreneur. I love building things and helping people. Very active on Twitter.",
+    "Student Turned Software Engineer. I have a love for designs and building products. I like to code in 0's & 1's",
   githubUsername: "vineetagarwal-code",
   about:
-    "At the end of 2022, I quit my job as a software engineer to go fulltime into building and scaling my own SaaS businesses. In the past, [I pursued a double degree in computer science and business](/#education), [interned at big tech companies in Silicon Valley](https://www.youtube.com/watch?v=d-LJ2e5qKdE), and [competed in over 21 hackathons for fun](/#hackathons). I also had the pleasure of being a part of the first ever in-person cohort of buildspace called [buildspace sf1](https://buildspace.so/sf1).",
+    "At the end of 2023, I tried to change my life by learning to ACTUALLY code and I have been coding ever since, I have a nick for building cool looking designs and core backend systems. You can find me on twitter [@vineetwts](https://twitter.com/vineetwts) and on github [@vineetagarwal-code](https://github.com/vineetagarwal-code). I also happen to write and share sometimes and below are some of my blogs.",
   navbar: {
     socials: [
       {

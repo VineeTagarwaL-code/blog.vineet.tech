@@ -9,14 +9,16 @@ import { BlurDiv } from "@/components/ui/Blur";
 import { DELAY } from "@/constants/misc";
 export default function Home() {
   return (
-    <main className="flex  flex-col min-h-[100dvh] my-16 scroll-smooth">
+    <main className="flex  flex-col min-h-[100dvh] mt-2 md:mt-16 scroll-smooth">
       <Introduction name={DATA.name} desc={DATA.shortDescription} />
       <About about={DATA.about} />
       <BlurDiv delay={DELAY * 1.88}>
         <Heading classname="text-7xl my-8">BLOGS</Heading>
       </BlurDiv>
       <Blogs showMore />
-      <Footer />
+      <BlurDiv delay={DELAY * 1.99}>
+        <Footer />
+      </BlurDiv>
     </main>
   );
 }

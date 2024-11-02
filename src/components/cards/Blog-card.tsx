@@ -1,6 +1,6 @@
 "use client";
 import getFormattedDate from "@/lib/formatdate";
-import { TitleHover } from "../title-hover";
+import { TitleHover } from "../ui/title-hover";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { FileText } from "lucide-react";

@@ -5,7 +5,7 @@ import { DATA } from "@/data/info";
 import { GithubGraph } from "./ui/github";
 export const About = ({ about }: { about: string }) => {
   return (
-    <section id="about">
+    <section id="about" className="my-8">
       <BlurDiv delay={DELAY * 1.45}>
         <h2 className="text-xl font-bold">About</h2>
       </BlurDiv>

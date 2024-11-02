@@ -24,7 +24,7 @@ export const Introduction = ({ name, desc }: IntroductionProps) => {
               </span>
             </BlurDiv>
           </div>
-          <BlurDiv delay={0.2} isView>
+          <BlurDiv delay={DELAY * 1.2} isView>
             <Avatar className="size-28 border">
               <AvatarImage src={DATA.image} />
               <AvatarFallback>CN</AvatarFallback>

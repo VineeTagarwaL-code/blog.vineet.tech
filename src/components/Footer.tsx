@@ -21,7 +21,7 @@ export const Footer = () => {
           on twitter
         </Link>{" "}
       </p>
-      <Heading classname="text-7xl my-8">VINEET.TECH</Heading>
+      <Heading classname=" my-8">VINEET.TECH</Heading>
     </div>
   );
 };
