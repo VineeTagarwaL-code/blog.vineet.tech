@@ -5,6 +5,7 @@ import React, { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { dataProps } from "@/data/info";
+import Link from "next/link";
 const dockVariants = cva(
   "mx-auto w-max h-full p-2 flex items-end rounded-full border"
 );
@@ -85,15 +86,16 @@ type DockIconProps = {
   icon: React.ReactNode;
 };
 const DockIcon = React.forwardRef<HTMLDivElement, DockIconProps>(
-  ({ name, link, icon }) => {
+  ({ link, icon }) => {
     return (
       <div>
-        <a href={link}>{icon}</a>
+        <Link href={link}>{icon}</Link>
       </div>
     );
   }
 );
 
+DockIcon.displayName = "DockIcon";
 Dock.displayName = "Dock";
 
 export { Dock };

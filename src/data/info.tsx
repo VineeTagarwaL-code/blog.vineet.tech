@@ -1,12 +1,5 @@
 import { ModeToggle } from "@/components/theme-toggle";
-import {
-  IconBrandGithub,
-  IconBrandX,
-  IconExchange,
-  IconHome,
-  IconNewSection,
-  IconTerminal2,
-} from "@tabler/icons-react";
+import { IconBrandGithub, IconBrandX, IconHome } from "@tabler/icons-react";
 import React from "react";
 
 export type dataProps = {
