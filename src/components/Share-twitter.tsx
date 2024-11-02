@@ -23,10 +23,10 @@ export default function ShareOnTwitter({
       </p>
       <Button
         onClick={() => shareOnTwitter(twitter_username)}
-        className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full flex items-center"
+        className=" text-white font-bold py-2 px-4 rounded-full flex items-center"
       >
         <Twitter className="mr-2 h-5 w-5" />
-        Follow on Twitter
+        Follow on twitter
       </Button>
     </div>
   );

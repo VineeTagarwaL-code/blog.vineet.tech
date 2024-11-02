@@ -1,5 +1,5 @@
 import { BlurDiv } from "./ui/Blur";
-import { DELAY } from "@/constants/misc";
+import { DELAY } from "@/lib/constants";
 import Markdown from "react-markdown";
 import { DATA } from "@/data/info";
 import { GithubGraph } from "./ui/github";

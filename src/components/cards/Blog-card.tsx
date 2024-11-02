@@ -8,36 +8,39 @@ import { Card, CardContent } from "@/components/ui/card";
 
 export const Blog = (post: Meta) => {
   return (
-    <Link href={`/blog/${post.id}`}>
-      <div className="hover:scale-[1.04] transition-all rounded-xl cursor-pointer bg-gray-400/20 dark:bg-stone-900/20 border-muted border-[1px] border-solid px-6 py-7 mb-6 relative z-40">
-        <h2 className="font-semibold text-2xl md:text-3xl relative group">
-          <TitleHover
-            imageLink={post.image}
-            width={200}
-            height={200}
-            url={`/blog/${post.id}`}
+    <div
+      onClick={() => {
+        window.location.href = `/blog/${post.id}`;
+      }}
+      className="hover:scale-[1.04] transition-all rounded-xl cursor-pointer bg-gray-400/20 dark:bg-stone-900/20 border-muted border-[1px] border-solid px-6 py-7 mb-6 relative z-40"
+    >
+      <h2 className="font-semibold text-2xl md:text-3xl relative group">
+        <TitleHover
+          imageLink={post.image}
+          width={200}
+          height={200}
+          url={`/blog/${post.id}`}
+        >
+          {post.title}
+        </TitleHover>
+      </h2>
+      <p className="text-lg md:text-xl mt-3 text-muted-foreground">
+        {post.description}
+      </p>
+      <p className="text-muted-foreground mt-4">
+        {getFormattedDate(post.date)} · Vineet Agarwal
+      </p>
+      <div>
+        {post.tags.map((tag: any) => (
+          <span
+            className="text-sm bg-gray-100 dark:bg-black border-solid border-[1px] border-muted dark:text-gray-200 text-gray-700 px-2 py-1 rounded-md mr-2 mt-2 inline-block"
+            key={tag}
           >
-            {post.title}
-          </TitleHover>
-        </h2>
-        <p className="text-lg md:text-xl mt-3 text-muted-foreground">
-          {post.description}
-        </p>
-        <p className="text-muted-foreground mt-4">
-          {getFormattedDate(post.date)} · Vineet Agarwal
-        </p>
-        <div>
-          {post.tags.map((tag: any) => (
-            <span
-              className="text-sm bg-gray-100 dark:bg-black border-solid border-[1px] border-muted dark:text-gray-200 text-gray-700 px-2 py-1 rounded-md mr-2 mt-2 inline-block"
-              key={tag}
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
+            {tag}
+          </span>
+        ))}
       </div>
-    </Link>
+    </div>
   );
 };
 

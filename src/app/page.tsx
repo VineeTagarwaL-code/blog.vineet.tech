@@ -6,7 +6,7 @@ import { Blogs } from "@/components/Blogs";
 import { Footer } from "@/components/Footer";
 import { Heading } from "@/components/Heading";
 import { BlurDiv } from "@/components/ui/Blur";
-import { DELAY } from "@/constants/misc";
+import { DELAY } from "@/lib/constants";
 export default function Home() {
   return (
     <main className="flex  flex-col min-h-[100dvh] mt-2 md:mt-16 scroll-smooth">

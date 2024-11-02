@@ -6,7 +6,7 @@ import { Blog, BlogSkeleton } from "./cards/Blog-card";
 import { NoPost } from "./cards/Blog-card";
 import { Input } from "./ui/Input";
 import { BlurDiv } from "./ui/Blur";
-import { DELAY } from "@/constants/misc";
+import { DELAY } from "@/lib/constants";
 
 type blogProps = {
   showMore?: boolean;

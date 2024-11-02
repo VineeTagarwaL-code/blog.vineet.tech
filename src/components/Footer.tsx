@@ -14,12 +14,7 @@ export const Footer = () => {
       </h2>
       <p className="max-w-2xl text-gray-400 text-lg">
         Want to chat? Just shoot me a dm{" "}
-        <Link
-          href="https://twitter.com"
-          className="text-blue-500 hover:text-blue-400"
-        >
-          on twitter
-        </Link>{" "}
+        <Link href="https://twitter.com/vineetwts">on twitter</Link>
       </p>
       <Heading classname=" my-8">VINEET.TECH</Heading>
     </div>

@@ -2,7 +2,7 @@ import React from "react";
 import { BlurDiv } from "./ui/Blur";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/Avatar";
 import { DATA } from "@/data/info";
-import { DELAY } from "@/constants/misc";
+import { DELAY } from "@/lib/constants";
 type IntroductionProps = {
   name: string;
   desc: string;
@@ -26,7 +26,7 @@ export const Introduction = ({ name, desc }: IntroductionProps) => {
           </div>
           <BlurDiv delay={DELAY * 1.2} isView>
             <Avatar className="size-28 border">
-              <AvatarImage src={DATA.image} />
+              <AvatarImage src={DATA.image} alt="image" />
               <AvatarFallback>CN</AvatarFallback>
             </Avatar>
           </BlurDiv>

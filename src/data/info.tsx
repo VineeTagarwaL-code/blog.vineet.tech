@@ -44,6 +44,7 @@ export const DATA: dataProps = {
           <IconBrandGithub className="text-neutral-500 dark:text-neutral-300" />
         ),
       },
+      // its not ideal to have toggle here but for the sake of example and functionality of multiple themes
       {
         name: "toggle",
         link: "#",

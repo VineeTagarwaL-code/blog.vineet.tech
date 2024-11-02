@@ -4,6 +4,9 @@ import { getBlogs } from "./blog.action";
 import { SuccessResponse } from "@/lib/success";
 import { ErrorHandler } from "@/lib/error";
 
+/**
+ * v3 will have tags and tag filtering
+ */
 export const getTags = withServerActionAsyncCatcher(async () => {
   const response = await getBlogs();
   const blogs = response.additional.meta;
