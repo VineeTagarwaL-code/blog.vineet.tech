@@ -21,6 +21,12 @@ const nextConfig = {
         port: "",
         pathname: "/_next/static/media/**",
       },
+      {
+        protocol: "https",
+        hostname: "assets.aceternity.com",
+        port: "",
+        pathname: "/_next/static/media/**",
+      },
     ],
   },
 };
