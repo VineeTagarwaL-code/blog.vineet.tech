@@ -29,10 +29,10 @@ const DockMobile = React.forwardRef<HTMLDivElement, DockProps>(
   ({ mobileClassName, navbar }) => {
     const [open, setOpen] = useState(false);
     return (
-      <div className="flex md:hidden pointer-events-none fixed  bottom-3 right-5 z-30 mx-auto  origin-bottom h-full max-h-14">
+      <div className="flex md:hidden  fixed  bottom-3 right-5 z-90 mx-auto  origin-bottom h-full max-h-14">
         <AnimatePresence>
           {open && (
-            <motion.div className="absolute bottom-full mb-2 inset-x-0 flex flex-col gap-2 items-center">
+            <motion.div className="absolute bottom-full mb-2 inset-x-0 flex flex-col gap-2 items-center z-50">
               {navbar.navbar.socials.map((social, idx) => (
                 <motion.div
                   key={idx}
@@ -49,8 +49,9 @@ const DockMobile = React.forwardRef<HTMLDivElement, DockProps>(
                 >
                   <DockIcon
                     key={idx}
-                    {...social}
-                    className="h-10 w-10 rounded-full bg-gray-50 dark:bg-neutral-900 flex items-center justify-center"
+                    link={social.link}
+                    icon={social.icon}
+                    className="h-10 w-10 cursor-pointer rounded-full bg-gray-50 dark:bg-neutral-900 flex items-center justify-center"
                   />
                 </motion.div>
               ))}
@@ -60,7 +61,7 @@ const DockMobile = React.forwardRef<HTMLDivElement, DockProps>(
         <div
           onClick={() => setOpen(!open)}
           className={cn(
-            "flex gap-4 items-end  rounded-2xl bg-gray-50 dark:bg-neutral-900 px-4",
+            "z-50 flex gap-4 items-end  rounded-2xl bg-gray-50 dark:bg-neutral-900 px-4",
             mobileClassName
           )}
         >
@@ -100,7 +101,7 @@ const DockDesktop = React.forwardRef<HTMLDivElement, DockProps>(
       }, 100);
     };
     return (
-      <div className="pointer-events-auto` fixed inset-x-0 top-5 z-30 mx-auto mb-4 flex origin-bottom h-full max-h-14">
+      <div className="hidden pointer-events-auto fixed inset-x-0 top-5 z-30 mx-auto mb-4 md:flex origin-bottom h-full max-h-14">
         <AnimatePresence>
           <motion.div
             initial={{ scale: 1 }}
@@ -146,7 +147,6 @@ const DockDesktop = React.forwardRef<HTMLDivElement, DockProps>(
 );
 
 type DockIconProps = {
-  name: string;
   link: string;
   icon: React.ReactNode;
   className?: string;
