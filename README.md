@@ -3,7 +3,7 @@
     <img src="https://github.com/user-attachments/assets/32b8cc5f-f4b5-4a9b-a665-a58ccaff64d8" alt="Logo" width="100px" >
   </a>
 <br/>
-  <h3 align="center">Personal Blog</h3>
+  <h3 align="center">Blog Template</h3>
   <p align="center" >
     Blog app for you in nextjs
     <br/>
@@ -15,21 +15,19 @@
 </p>
 
 
-# Blog.vineet.tech
+# [Blog.vineet.tech](https://github.com/VineeTagarwaL-code/blog.vineet.tech)
 
-A personal blogging platform built using **Next.js**, by **Vineet Agarwal**, but customizable for anyone. Easily set up your own blog with this template!
+A template to help you create your blog website in minutes, Built by vineet its an easy to use and configure template which you can customize to endless posibilities
 
 ## Features
 - **Next.js** for server-side rendering
 - **Tailwind CSS** for styling
 - **Prisma** for database interactions
 - **TypeScript** support
+- **V3CN** for github graph
 - **Docker** for containerized deployment
 
-## Prerequisites
-- Node.js
-- Docker (optional for deployment)
-- Prisma (for database setup)
+
 
 ## Getting Started
 1. Clone the repository:
@@ -42,19 +40,11 @@ A personal blogging platform built using **Next.js**, by **Vineet Agarwal**, but
    ```
 3. Set up environment variables (refer to `.env.sample`).
 
-4. Start the development server:
+4. Edit the data/info.tsx, with your data 
+
+5. Start the development server:
    ```bash
    npm run dev
-   ```
-
-## Deployment
-1. Build Docker image:
-   ```bash
-   docker build -t blog-app .
-   ```
-2. Run the container:
-   ```bash
-   docker run -p 3000:3000 blog-app
    ```
 
 ## License
@@ -62,6 +52,3 @@ MIT License
 
 For more details, visit [blog.vineet.tech](https://github.com/VineeTagarwaL-code/blog.vineet.tech).
 
---- 
-
-This template can be expanded based on the specific details of your project and setup instructions.
