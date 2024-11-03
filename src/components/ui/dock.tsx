@@ -82,7 +82,9 @@ const DockDesktop = ({ DesktopClassName, navbar }: DockProps) => {
   const [isHovered, setIsHovered] = useState(false);
 
   const iconWidth = 40;
-  const totalIcons = navbar.socials.length * iconWidth + 35;
+  const utilsWidth = 50;
+  const totalIcons =
+    navbar.socials.length * iconWidth + navbar.utils.length * utilsWidth + 35;
   const handleMouseEnter = () => {
     setIsBlurred(true);
     setIsHovered(true);
@@ -134,6 +136,11 @@ const DockDesktop = ({ DesktopClassName, navbar }: DockProps) => {
               {navbar.socials.map((social, idx) => (
                 <DockIcon key={idx} {...social} />
               ))}
+              <div className="border-l-[1px] border-solid dark:border-muted-foreground">
+                {navbar.utils.map((util, idx) => (
+                  <DockUtil key={idx} util={util} />
+                ))}
+              </div>
             </motion.div>
           )}
         </motion.div>
@@ -142,16 +149,29 @@ const DockDesktop = ({ DesktopClassName, navbar }: DockProps) => {
   );
 };
 
+type DockUtilProps = {
+  util: React.ReactNode;
+  className?: string;
+};
+
+const DockUtil = ({ util, className }: DockUtilProps) => {
+  return (
+    <motion.div whileHover={{ scale: 1.1 }} className={cn(className)}>
+      {util}
+    </motion.div>
+  );
+};
+
 type DockIconProps = {
-  link: string;
+  link?: string;
   icon: React.ReactNode;
   className?: string;
 };
 const DockIcon = ({ link, icon, className }: DockIconProps) => {
   return (
-    <div className={cn(className)}>
-      <Link href={link}>{icon}</Link>
-    </div>
+    <motion.div whileHover={{ scale: 1.1 }} className={cn(className)}>
+      <Link href={link!}>{icon}</Link>
+    </motion.div>
   );
 };
 export { Dock };

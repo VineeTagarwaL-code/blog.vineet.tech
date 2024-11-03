@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Heading } from "./Heading";
+import { DATA } from "@/data/info";
 export const Footer = () => {
   return (
     <div className=" text-white min-h-[300px] flex flex-col items-center justify-center px-4  text-center">
@@ -14,7 +15,7 @@ export const Footer = () => {
       </h2>
       <p className="max-w-2xl text-gray-400 text-lg">
         Want to chat? Just shoot me a dm{" "}
-        <Link href="https://twitter.com/vineetwts">on twitter</Link>
+        <Link href={DATA.twitterLink}>on twitter</Link>
       </p>
       <Heading classname=" my-8">VINEET.TECH</Heading>
     </div>

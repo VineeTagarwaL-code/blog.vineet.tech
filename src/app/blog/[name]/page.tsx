@@ -7,7 +7,7 @@ import getFormattedDate from "@/lib/formatdate";
 import Link from "next/link";
 import Image from "next/image";
 import { getBlogByName } from "@/app/actions/blog.action";
-import ShareOnTwitter from "@/components/Share-twitter";
+import BlogFooter from "@/components/Blog-footer";
 
 export async function generateMetadata({
   params,
@@ -75,7 +75,7 @@ export default async function Page({ params }: { params: { name: string } }) {
           {post.additional.blogPost.content}
         </article>
       </div>
-      <ShareOnTwitter twitter_username="vineetwts" />
+      <BlogFooter />
     </div>
   );
 }

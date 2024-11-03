@@ -1,10 +1,16 @@
 import { ModeToggle } from "@/components/theme-toggle";
-import { IconBrandGithub, IconBrandX, IconHome } from "@tabler/icons-react";
+import {
+  IconBook,
+  IconBrandGithub,
+  IconBrandX,
+  IconHome,
+} from "@tabler/icons-react";
 import React from "react";
 
 export type dataProps = {
   name: string;
   image: string;
+  twitterLink: string;
   shortDescription: string;
   githubUsername: string;
   about: string;
@@ -14,12 +20,13 @@ export type dataProps = {
       link: string;
       icon: React.ReactNode;
     }[];
+    utils: React.ReactNode[];
   };
 };
 export const DATA: dataProps = {
   name: "vineet",
-  image:
-    "https://www.vineet.tech/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fimage.a96af8f3.jpg&w=640&q=75",
+  image: "/vineet.jpg",
+  twitterLink: "https://twitter.com/vineetwts",
   shortDescription:
     "Student Turned Software Engineer. I have a love for designs and building products. I like to code in 0's & 1's",
   githubUsername: "vineetagarwal-code",
@@ -44,12 +51,12 @@ export const DATA: dataProps = {
           <IconBrandGithub className="text-neutral-500 dark:text-neutral-300" />
         ),
       },
-      // its not ideal to have toggle here but for the sake of example and functionality of multiple themes
       {
-        name: "toggle",
-        link: "#",
-        icon: <ModeToggle />,
+        name: "Blogs",
+        link: "/blog",
+        icon: <IconBook className="text-neutral-500 dark:text-neutral-300" />,
       },
     ],
+    utils: [<ModeToggle key="mode-toggle" />],
   },
 };

@@ -1,12 +1,11 @@
 "use client";
 import getFormattedDate from "@/lib/formatdate";
 import { TitleHover } from "../ui/title-hover";
-import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { FileText } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
-export const Blog = (post: Meta) => {
+const Blog = (post: Meta) => {
   return (
     <div
       onClick={() => {
@@ -82,7 +81,7 @@ export const BlogSkeleton: React.FC<{ count: number; className?: string }> = ({
 
 export const NoPost = () => {
   return (
-    <Card className="w-full bg-stone-900/40 mx-auto border-dotted border-2 border-gray-700">
+    <Card className="w-full bg-stone-900/40 mx-auto border-dotted border-2 border-gray-700 ">
       <CardContent className="flex flex-col items-center justify-center py-12">
         <FileText className="h-16 w-16 text-muted-foreground mb-4" />
         <h2 className="text-2xl font-semibold text-center mb-2">
@@ -96,3 +95,5 @@ export const NoPost = () => {
     </Card>
   );
 };
+
+export default Blog;
