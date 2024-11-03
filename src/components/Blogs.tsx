@@ -79,7 +79,7 @@ export function Blogs({ showMore }: blogProps) {
           )}
         </Suspense>
         <div className="flex justify-end mt-4">
-          {showMore && (
+          {filteredBlogs.length > 2 && showMore && (
             <Button
               className="hover:scale-105 transition-all dark:hover:bg-white "
               onClick={() => {
