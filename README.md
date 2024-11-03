@@ -40,7 +40,9 @@ A template to help you create your blog website in minutes, Built by vineet its 
    ```
 3. Set up environment variables (refer to `.env.sample`).
 
-4. Edit the data/info.tsx, with your data 
+4. Edit the data/info.tsx, with your data
+
+5. This blog template uses github as its cms, so you will have to make a repository similar to this and upload your blogs in the form of mdx. Repository that, I use  [remote-blogpost](https://github.com/VineeTagarwaL-code/remote-blogpost)
 
 5. Start the development server:
    ```bash
