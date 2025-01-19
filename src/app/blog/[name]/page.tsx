@@ -1,8 +1,3 @@
-// import {
-//   fetchViewCount,
-//   incrementViewCount,
-// } from "@/app/actions/viewcount.actions";
-// import { Eye } from "lucide-react";
 import getFormattedDate from "@/lib/formatdate";
 import Link from "next/link";
 import Image from "next/image";
@@ -14,7 +9,7 @@ export async function generateMetadata({
   params,
 }: {
   params: { name: string };
-}) {
+}): Promise<Metadata> {
   const post = await getBlogByName(`${params.name}.mdx`);
 
   if (!post) {
