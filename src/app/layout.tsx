@@ -32,7 +32,7 @@ export const metadata: Metadata = {
         url: "https://blog.vineet.tech/vineet.png", // Replace with your OpenGraph image path
         width: 1200,
         height: 630,
-        alt: "Vineet's Blog Landing Page",
+        alt: "Vineet's Blog",
       },
     ],
     locale: "en_US",
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Vineet's Blog - Landing Page",
+    title: "Vineet's Blog",
     description:
       "Welcome to Vineet's Blog - Dive into insights, ideas, and innovation in tech and design.",
     images: ["https://blog.vineet.tech/vineet.png"],
