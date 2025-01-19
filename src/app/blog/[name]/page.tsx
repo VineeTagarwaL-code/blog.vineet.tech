@@ -18,8 +18,9 @@ export async function generateMetadata({
       description: "The blog you are looking for does not exist.",
     };
   }
-
+  // const baseUrl = "https://vineet.tech/";
   return {
+    // metadataBase: new URL(baseUrl),
     title: post.additional.blogPost.meta.title,
     description: post.additional.blogPost.meta.description,
     openGraph: {
@@ -35,6 +36,20 @@ export async function generateMetadata({
         },
       ],
       type: "article",
+    },
+
+    twitter: {
+      card: "summary_large_image",
+      title: post.additional.blogPost.meta.title,
+      description: post.additional.blogPost.meta.description,
+      images: [
+        {
+          url: post.additional.blogPost.meta.image,
+          width: 1200,
+          height: 630,
+          alt: post.additional.blogPost.meta.title,
+        },
+      ],
     },
   };
 }
