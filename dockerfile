@@ -9,6 +9,8 @@ RUN npm i
 FROM node:20-alpine AS builder
 
 WORKDIR /app
+RUN apt-get update && apt install -y openssl
+
 
 COPY . .
 
@@ -29,6 +31,5 @@ COPY --from=builder /app/package.json ./
 
 EXPOSE 3000
 ENV PORT 3000
-
 CMD ["node", "server.js"]
 
