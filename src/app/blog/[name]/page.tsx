@@ -63,7 +63,7 @@ export default async function Page({ params }: { params: { name: string } }) {
           {getFormattedDate(post.additional.blogPost.meta.date)} · Vineet
           Agarwal
         </p>
-        <article className="prose-base md:prose-lg prose-li:list-disc  mb-8  prose-pre:bg-gray-400 dark:prose-pre:bg-gray-800 prose-pre:px-3 prose-pre:text-gray-900 dark:prose-pre:text-white dark:prose-p:text-gray-400  prose-h1:decoratin-slate-600 ">
+        <article className="prose-base md:prose-lg prose-li:list-disc  mb-8  prose-pre:bg-gray-400 dark:prose-pre:bg-gray-800 prose-pre:px-3 prose-pre:text-gray-900 dark:prose-pre:text-white dark:prose-p:text-white  prose-h1:decoratin-slate-600 ">
           <Image
             src={post.additional.blogPost.meta.image}
             alt={post.additional.blogPost.meta.title}
