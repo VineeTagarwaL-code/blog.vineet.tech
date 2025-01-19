@@ -1,8 +1,8 @@
-import {
-  fetchViewCount,
-  incrementViewCount,
-} from "@/app/actions/viewcount.actions";
-import { Eye } from "lucide-react";
+// import {
+//   fetchViewCount,
+//   incrementViewCount,
+// } from "@/app/actions/viewcount.actions";
+// import { Eye } from "lucide-react";
 import getFormattedDate from "@/lib/formatdate";
 import Link from "next/link";
 import Image from "next/image";
@@ -31,9 +31,9 @@ export default async function Page({ params }: { params: { name: string } }) {
       </div>
     );
 
-  await incrementViewCount(params.name);
+  // await incrementViewCount(params.name);
 
-  const viewCount = await fetchViewCount(params.name);
+  // const viewCount = await fetchViewCount(params.name);
 
   return (
     <div>
@@ -55,9 +55,6 @@ export default async function Page({ params }: { params: { name: string } }) {
       <div className="mt-3 ">
         <div className="text-4xl text-foreground font-semibold w-full flex justify-between items-center">
           <p>{post.additional.blogPost.meta.title} </p>
-          <p className="text-muted-foreground text-base flex justify-center items-center rounded-xl px-3 py-2  gap-3">
-            <Eye /> {viewCount} {/* Display view count */}
-          </p>
         </div>
         <p className="text-muted-foreground mt-3 mb-12 ">
           {getFormattedDate(post.additional.blogPost.meta.date)} · Vineet
