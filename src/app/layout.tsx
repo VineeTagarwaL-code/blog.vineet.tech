@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     siteName: "Vineet's Blog",
     images: [
       {
-        url: "/vineet.png", // Replace with your OpenGraph image path
+        url: "https://blog.vineet.tech/vineet.png", // Replace with your OpenGraph image path
         width: 1200,
         height: 630,
         alt: "Vineet's Blog Landing Page",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     title: "Vineet's Blog - Landing Page",
     description:
       "Welcome to Vineet's Blog - Dive into insights, ideas, and innovation in tech and design.",
-    images: ["/vineet.png"],
+    images: ["https://blog.vineet.tech/vineet.png"],
   },
 };
 

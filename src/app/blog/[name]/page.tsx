@@ -8,14 +8,39 @@ import Link from "next/link";
 import Image from "next/image";
 import { getBlogByName } from "@/app/actions/blog.action";
 import BlogFooter from "@/components/Blog-footer";
+import { Metadata } from "next";
 
 export async function generateMetadata({
   params,
 }: {
   params: { name: string };
 }) {
+  const post = await getBlogByName(`${params.name}.mdx`);
+
+  if (!post) {
+    return {
+      title: "Post Not Found",
+      description: "The blog you are looking for does not exist.",
+    };
+  }
+
   return {
-    title: `${params.name}`,
+    title: post.additional.blogPost.meta.title,
+    description: post.additional.blogPost.meta.description,
+    openGraph: {
+      title: post.additional.blogPost.meta.title,
+      description: post.additional.blogPost.meta.description,
+      url: `https://blog.vineet.tech/blog/${params.name}`,
+      images: [
+        {
+          url: post.additional.blogPost.meta.image,
+          width: 1200,
+          height: 630,
+          alt: post.additional.blogPost.meta.title,
+        },
+      ],
+      type: "article",
+    },
   };
 }
 
