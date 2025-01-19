@@ -21,6 +21,30 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   title: "Blogs",
   description: "Blogs written by vineet",
+  openGraph: {
+    title: "Vineet's Blog - Landing Page",
+    description:
+      "Welcome to Vineet's Blog - Dive into insights, ideas, and innovation in tech and design.",
+    url: "https://blog.vineet.tech",
+    siteName: "Vineet's Blog",
+    images: [
+      {
+        url: "/vineet.png", // Replace with your OpenGraph image path
+        width: 1200,
+        height: 630,
+        alt: "Vineet's Blog Landing Page",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Vineet's Blog - Landing Page",
+    description:
+      "Welcome to Vineet's Blog - Dive into insights, ideas, and innovation in tech and design.",
+    images: ["/vineet.png"],
+  },
 };
 
 export default function RootLayout({
